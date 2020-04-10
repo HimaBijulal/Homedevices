@@ -34,6 +34,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                     startActivity(intent);
                     System.out.println("NoBlahPls");
                     System.out.println("Blah");
+                    System.out.println("Hello")
                     break;
                // }
             }
