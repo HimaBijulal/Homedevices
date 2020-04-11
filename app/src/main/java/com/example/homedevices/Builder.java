@@ -10,7 +10,8 @@ public class Builder extends User {
 		super(name, emiratesID, phoneNumber, emailAddress);
 	}
 
-	public void Addhouse(Object Streetname, Object Parameter1) {
+	public void Addhouse() {
+		//Listofhouses.add(new House())
 	}
 	public void Removehouse() {
 	}
