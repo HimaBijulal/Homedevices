@@ -1,7 +1,7 @@
 /**
  * 
  */
-
+package com.example.homedevices;
 /** 
  * <!-- begin-UML-doc -->
  * <!-- end-UML-doc -->
@@ -26,7 +26,7 @@ public class Report {
 	* <!-- end-UML-doc -->
 	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	*/
-	private Room Generates;
+	//private Room Generates;
 
 	/** 
 	* <!-- begin-UML-doc -->

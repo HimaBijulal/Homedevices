@@ -1,4 +1,4 @@
-
+package com.example.homedevices;
 /**
  * 
  */
@@ -35,7 +35,7 @@ public class HouseOwner extends Resident {
 	* <!-- end-UML-doc -->
 	* @generated "UML to Java (com.ibm.xtools.transform.uml2.java5.internal.UML2JavaTransform)"
 	*/
-	private Set<Appliance> hasan;
+	//private Set<Appliance> hasan;
 
 	/** 
 	* <!-- begin-UML-doc -->

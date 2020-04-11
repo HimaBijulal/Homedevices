@@ -1,7 +1,7 @@
 /**
  * 
  */
-
+package com.example.homedevices;
 /** 
  * <!-- begin-UML-doc -->
  * <!-- end-UML-doc -->
