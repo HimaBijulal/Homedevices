@@ -7,6 +7,7 @@
     tools:context=".Dashboard">
 
     <Button
+        android:id="@+id/addbuilder_button"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="315dp"
         android:layout_height="56dp"
@@ -20,7 +21,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/addhouse_button"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:text="Add House"
         android:textColor="#FFF"
@@ -33,7 +34,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/delhouse_button"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:text="Delete House"
         android:textColor="#FFF"
@@ -46,7 +47,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/addroom_button"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:text="Add Room"
         android:textColor="#FFF"
@@ -59,9 +60,9 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/delroom_button"
         style="@style/Widget.AppCompat.Button.Borderless"
-        android:text="Delete House"
+        android:text="Delete Room"
         android:textColor="#FFF"
         android:layout_width="315dp"
         android:layout_height="56dp"
