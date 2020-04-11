@@ -8,8 +8,8 @@ public class Admin extends User {
 		super(name, emiratesID, phoneNumber, emailAddress);
 	}
 
-	//public boolean Addbuilder(String name, int emiratesID, int phoneNumber, String emailAddress) {
-		//return FileIO.AddBuilder(new Builder(name,emiratesID,phoneNumber,emailAddress));
+	public void AddBuilder(FileIO file,String name, int emiratesID, int phoneNumber, String emailAddress) {
+		file.addBuilder(name,emiratesID,phoneNumber,emailAddress);
 
-	//}
+	}
 }

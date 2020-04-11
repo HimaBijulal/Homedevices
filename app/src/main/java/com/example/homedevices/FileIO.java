@@ -6,8 +6,10 @@ import java.util.Set;
 
 
 public class FileIO {
-    public ArrayList<User> UserList;
-    public void AddUser(){}
+    private ArrayList<User> UserList;
+    void addBuilder(String name, int emiratesID, int phoneNumber, String emailAddress){
+        UserList.add(new Builder(name,emiratesID,phoneNumber,emailAddress));
+    }
     public void getUserList(){}//at the start of the code
     public void saveToFile(){}
     public void setHouseList(){}
