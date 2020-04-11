@@ -11,10 +11,10 @@ public class House {
 	public String District;
 	public int ID;
 	public ArrayList<Room> Listofrooms;
+	public ArrayList<Resident> ListofResidents;
 	public int Houseno;
-	public Integer OwnerID;
-	public ArrayList<Occupant> ListofOccupants;
-	public static Integer nextid;
+	public int OwnerID;
+	public static int nextid;
 	public void GenerateReport() {
 		// begin-user-code
 		// TODO Auto-generated method stub
