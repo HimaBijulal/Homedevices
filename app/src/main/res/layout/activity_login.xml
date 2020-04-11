@@ -51,7 +51,7 @@
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="153dp"
         android:layout_height="56dp"
-        android:background="@drawable/bgbutton"
+        android:background="@drawable/bgbuttonlogin"
         android:text="Login"
         android:textColor="#FFF"
         app:layout_constraintBottom_toTopOf="parent"
