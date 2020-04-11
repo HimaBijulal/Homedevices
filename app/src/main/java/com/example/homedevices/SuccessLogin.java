@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class Success extends AppCompatActivity {
+public class SuccessLogin extends AppCompatActivity {
 
     private TextView Sucess;
 

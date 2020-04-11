@@ -2,7 +2,6 @@ package com.example.homedevices;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.EntityIterator;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -30,7 +29,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.etLoginButton: {
                // if (Username.getText().toString() == "admin" && Password.getText().toString() == "admin") {
-                    Intent intent = new Intent(this, Success.class);
+                    Intent intent = new Intent(this, SuccessLogin.class);
                     startActivity(intent);
                     System.out.println("NoBlahPls");
                     System.out.println("Blah");
