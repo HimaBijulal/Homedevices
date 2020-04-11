@@ -10,14 +10,30 @@ public class Builder extends User {
 		super(name, emiratesID, phoneNumber, emailAddress);
 	}
 
-	public void Addhouse() {
-		//Listofhouses.add(new House())
+	public void Addhouse(String streetname, String district, int houseno) {
+		Listofhouses.add(new House(streetname,district,houseno));
 	}
-	public void Removehouse() {
+	public void Removehouse(int id) {
+		for (House house:Listofhouses)
+			if(house.getID() == id){
+				Listofhouses.remove(house);
+				break;
+			}
+
 	}
-	public void Addroom() {
+	public void Addroom(int id,String name) {
+		for (House house:Listofhouses)
+			if(house.getID() == id) {
+				house.addRoom(name);
+				break;
+			}
 	}
-	public void Removeroom() {
+	public void Removeroom(int HouseID,int RoomID) {
+		for (House house:Listofhouses)
+			if(house.getID() == HouseID) {
+				house.delRoom(RoomID);
+				break;
+			}
 	}
 	public void Addoutlet() {
 	}

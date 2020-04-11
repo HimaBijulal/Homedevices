@@ -1,12 +1,12 @@
 package com.example.homedevices;
 
 
+import java.util.ArrayList;
 import java.util.Set;
 
 public class HouseOwner extends Resident {
-	private House Owns;
-	private Appliance hasan;
-	private Appliance appliance;
+	private House House;
+
 	public void Viewhousereport() {
 		// begin-user-code
 		// TODO Auto-generated method stub

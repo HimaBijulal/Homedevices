@@ -1,8 +1,10 @@
 package com.example.homedevices;
 
 
+import java.util.ArrayList;
+
 public class Resident  {
 
 	public House House;
-	public Appliance ApplianceList;
+	public ArrayList<Appliance> ApplianceList;
 }
