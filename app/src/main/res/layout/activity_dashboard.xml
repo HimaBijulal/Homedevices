@@ -86,11 +86,13 @@
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:fontFamily="sans-serif-black"
-        android:paddingTop="15"
+        android:paddingTop="15dp"
         android:text="Welcome Home"
         android:textAlignment="center"
         android:textColor="#FFF"
         android:textSize="20dp"
-        tools:layout_editor_absoluteX="55dp"
-        tools:layout_editor_absoluteY="11dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
 </androidx.constraintlayout.widget.ConstraintLayout>

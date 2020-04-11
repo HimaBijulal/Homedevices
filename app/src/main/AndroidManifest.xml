@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Dashboard"></activity>
+        <activity android:name=".delroom"></activity>
+        <activity android:name=".addroom" />
+        <activity android:name=".delhouse" />
+        <activity android:name=".addhouse" />
+        <activity android:name=".addbuilder" />
+        <activity android:name=".Dashboard" />
         <activity android:name=".SuccessLogin" />
         <activity android:name=".Login">
             <intent-filter>
