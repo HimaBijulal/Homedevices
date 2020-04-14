@@ -5,9 +5,6 @@ import java.math.BigInteger;
 
 
 public class Outlet {
-	private Room room;
+	private String label;
 	public int CurrentUsage;
-	public Appliance LinkedAppliance;
-	public int ID;
-	public static int nextid;
 }

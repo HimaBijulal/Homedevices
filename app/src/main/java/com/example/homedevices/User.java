@@ -3,21 +3,20 @@
 package com.example.homedevices;
 
 
-public abstract class User {
-private String Name;
-private int EmiratesID;
-private int ID;
-private static int nextID=1;
-private int PhoneNumber;
-private String EmailAddress;
+abstract class User {
+	private String Name;
+	private int EmiratesID;
+	private int PhoneNumber;
+	private String EmailAddress;
+	private String Username;
+	private String Password;
 
-public User(String name, int emiratesID, int phoneNumber, String emailAddress) {
+	User(String name, int emiratesID, int phoneNumber, String emailAddress, String username, String password) {
 		Name = name;
 		EmiratesID = emiratesID;
 		PhoneNumber = phoneNumber;
 		EmailAddress = emailAddress;
-		ID = nextID;
-		nextID++;
-
-		}
-		}
+		Username = username;
+		Password = password;
+	}
+}
