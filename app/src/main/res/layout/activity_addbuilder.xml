@@ -117,22 +117,22 @@
         android:id="@+id/editText3"
         android:layout_width="254dp"
         android:layout_height="60dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginEnd="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.47" />
+        app:layout_constraintVertical_bias="0.467" />
 
     <EditText
         android:id="@+id/editText4"
         android:layout_width="254dp"
-        android:inputType="textPassword"
         android:layout_height="60dp"
-        android:layout_marginEnd="28dp"
+        android:layout_marginEnd="16dp"
+        android:inputType="textPassword"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.57" />
+        app:layout_constraintVertical_bias="0.569" />
 
     <EditText
         android:id="@+id/editText"
@@ -148,11 +148,11 @@
         android:id="@+id/editText2"
         android:layout_width="254dp"
         android:layout_height="60dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginEnd="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.386" />
+        app:layout_constraintVertical_bias="0.35" />
 
     <Button
         android:id="@+id/button2"
@@ -169,7 +169,7 @@
         app:layout_constraintVertical_bias="0.699" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/cancelbutton"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="173dp"
         android:layout_height="56dp"
