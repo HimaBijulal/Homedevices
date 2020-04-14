@@ -3,7 +3,9 @@
 package com.example.homedevices;
 
 
-abstract class User {
+import java.io.Serializable;
+
+abstract class User implements Serializable {
 	private String Name;
 	private int EmiratesID;
 	private int PhoneNumber;
@@ -18,5 +20,8 @@ abstract class User {
 		EmailAddress = emailAddress;
 		Username = username;
 		Password = password;
+	}
+	public String getEmail(){
+		return EmailAddress;
 	}
 }

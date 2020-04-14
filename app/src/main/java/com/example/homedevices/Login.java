@@ -29,9 +29,11 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.etLoginButton: {
                // if (Username.getText().toString() == "admin" && Password.getText().toString() == "admin") {
-                    Intent intent = new Intent(this, Dashboard.class);
-                    startActivity(intent);
-                    System.out.println("NoBlahPls");
+                Builder c =new Builder("a",1,2,"A@a.com","class","d");
+                Intent intent = new Intent(this, Dashboard.class);
+                intent.putExtra("User",c);
+                startActivity(intent);
+                System.out.println("NoBlahPls");
                     System.out.println("Blah");
                     System.out.println("Hello");
                     break;
