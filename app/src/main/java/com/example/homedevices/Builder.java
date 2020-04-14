@@ -6,32 +6,33 @@ public class Builder extends User {
 
 	private ArrayList <House> Listofhouses;
 
-	public Builder(String name, int emiratesID, int phoneNumber, String emailAddress) {
-		super(name, emiratesID, phoneNumber, emailAddress);
+	Builder(String name, int emiratesID, int phoneNumber, String emailAddress, String username, String password) {
+		super(name, emiratesID, phoneNumber, emailAddress, username, password);
 	}
 
-	public void Addhouse(String streetname, String district, int houseno) {
-		Listofhouses.add(new House(streetname,district,houseno));
+
+	public void Addhouse(String streetname, String district, int houseno, String label) {
+		Listofhouses.add(new House(streetname,district,houseno,label));
 	}
-	public void Removehouse(int id) {
+	public void Removehouse(String label) {
 		for (House house:Listofhouses)
-			if(house.getID() == id){
+			if(house.getLabel().equals(label) ){
 				Listofhouses.remove(house);
 				break;
 			}
 
 	}
-	public void Addroom(int id,String name) {
+	public void Addroom(String Houselabel,String Roomlabel) {
 		for (House house:Listofhouses)
-			if(house.getID() == id) {
-				house.addRoom(name);
+			if(house.getLabel().equals(Houselabel)) {
+				house.addRoom(Roomlabel);
 				break;
 			}
 	}
-	public void Removeroom(int HouseID,int RoomID) {
+	public void Removeroom(String Houselabel,String Roomlabel) {
 		for (House house:Listofhouses)
-			if(house.getID() == HouseID) {
-				house.delRoom(RoomID);
+			if(house.getLabel().equals(Houselabel)) {
+				house.delRoom(Roomlabel);
 				break;
 			}
 	}

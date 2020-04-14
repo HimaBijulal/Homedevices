@@ -5,7 +5,10 @@ import java.util.ArrayList;
 import java.util.Set;
 
 public class HouseOwner extends Resident {
-	private House House;
+
+	HouseOwner(String name, int emiratesID, int phoneNumber, String emailAddress, String username, String password) {
+		super(name, emiratesID, phoneNumber, emailAddress, username, password);
+	}
 
 	public void Viewhousereport() {
 		// begin-user-code
