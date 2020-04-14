@@ -10,6 +10,5 @@ public class Admin extends User {
 
 	public void AddBuilder(FileIO file,String name, int emiratesID, int phoneNumber, String emailAddress) {
 		file.addBuilder(name,emiratesID,phoneNumber,emailAddress);
-
 	}
 }
