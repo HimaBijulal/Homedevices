@@ -4,20 +4,16 @@ package com.example.homedevices;
 import java.util.Set;
 import java.util.ArrayList;
 public class Room {
-	private int ID;
+	public ArrayList <Outlet> listofoutlets;
+	private String label;
 
-	int getID() {
-		return ID;
+
+	Room(String label) {
+		label = label;
 	}
 
-	public ArrayList <Outlet> listofoutlets;
-	private String Name;
-	private House house;
-	private static int nextid;
-
-	Room(String name) {
-		Name = name;
-		ID = nextid++;
+	String getLabel() {
+		return label;
 	}
 
 	public void GenerateReport() {

@@ -6,30 +6,30 @@ import java.util.Set;
 
 
 public class House {
-	House(String streetname, String district, int houseno) {
+	private  String Streetname;
+	private String District;
+	private int Houseno;
+	private String label;
+	private ArrayList<Room> Listofrooms;
+
+	House(String streetname, String district, int houseno, String label) {
 		Streetname = streetname;
 		District = district;
 		Houseno = houseno;
-		ID = nextid++;
+		this.label = label;
 	}
 
-	private  String Streetname;
-	private String District;
-	private int ID;
-	private ArrayList<Room> Listofrooms;
-	private ArrayList<Resident> ListofResidents;
-	private int Houseno;
-	private static int nextid;
-
-	int getID() {
-		return ID;
+	String getLabel() {
+		return label;
 	}
+
 	void addRoom(String name){
 		Listofrooms.add(new Room(name));
 	}
-	void delRoom(int ID){
+
+	void delRoom(String label){
 		for (Room room: Listofrooms)
-			if(room.getID() == ID) {
+			if(room.getLabel().equals(label)) {
 				Listofrooms.remove(room);
 				break;
 			}
