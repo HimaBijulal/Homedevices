@@ -28,31 +28,32 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
     }
     @Override
     public void onClick(View v) {
+        User c= (User) getIntent().getSerializableExtra("User");
         switch (v.getId()) {
             case R.id.addbuilder_button: {
 
-                Intent intent = new Intent(this, addbuilder.class);
+                Intent intent = new Intent(this, addbuilder.class).putExtra("User",c);;
                 startActivity(intent);
                 break;
 
             }
             case R.id.addhouse_button:{
-                Intent intent = new Intent(this, addhouse.class);
+                Intent intent = new Intent(this, addhouse.class).putExtra("User",c);;
                 startActivity(intent);
                 break;
             }
             case R.id.delhouse_button:{
-                Intent intent = new Intent(this, delhouse.class);
+                Intent intent = new Intent(this, delhouse.class).putExtra("User",c);;
                 startActivity(intent);
                 break;
             }
             case R.id.addroom_button:{
-                Intent intent = new Intent(this, addroom.class);
+                Intent intent = new Intent(this, addroom.class).putExtra("User",c);;
                 startActivity(intent);
                 break;
             }
             case R.id.delroom_button:{
-                Intent intent = new Intent(this, delroom.class);
+                Intent intent = new Intent(this, delroom.class).putExtra("User",c);;
                 startActivity(intent);
                 break;
             }
