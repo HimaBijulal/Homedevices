@@ -22,7 +22,7 @@ public class addbuilder extends AppCompatActivity implements View.OnClickListene
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.etLoginButton: {
+            case R.id.cancelbutton: {
                 // if (Username.getText().toString() == "admin" && Password.getText().toString() == "admin") {
                 Intent intent = new Intent(this, Dashboard.class);
                 startActivity(intent);
