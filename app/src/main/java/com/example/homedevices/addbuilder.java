@@ -14,6 +14,7 @@ public class addbuilder extends AppCompatActivity implements View.OnClickListene
 
     private EditText Name, EmiratesID, PhoneNo, Username, Password;
     private Button Add, Cancel;
+    private Admin c;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +29,8 @@ public class addbuilder extends AppCompatActivity implements View.OnClickListene
         Cancel = findViewById(R.id.cancelbutton);
         Add.setOnClickListener(this);
         Cancel.setOnClickListener(this);
-        Builder c= (Builder) getIntent().getSerializableExtra("User");
-        System.out.println(c.getEmail()+"");
+        c= (Admin) getIntent().getSerializableExtra("User");
+
 
 
     }
@@ -44,15 +45,16 @@ public class addbuilder extends AppCompatActivity implements View.OnClickListene
                 //Builder b=new Builder(Name.getText().toString(), EmiratesID.getText()., PhoneNo.getText().toString(), Username.getText().toString(), Password.getText().toString());
                 //Builder c= (Builder) getIntent().getSerializableExtra("User");
                 //System.out.println(c.getEmail()+"");
+                c.AddBuilder(Name,EmiratesID,PhoneNo,EmailAddress,Username,Password);
+                //Add builder object to list of builders
                 Intent intent = new Intent(this, Dashboard.class);
                 startActivity(intent);
-
-
                 break;
                 // }
             }
             case R.id.CancelBuilderB: {
-                //setContentView(R.layout.activity_cancel);// create layout with "operation cancelled"
+                Intent intent = new Intent(this, Dashboard.class);
+                startActivity(intent);
             }
         }
     }

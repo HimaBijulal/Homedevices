@@ -55,6 +55,7 @@
         app:layout_constraintVertical_bias="0.314" />
 
     <EditText
+        android:id="@+id/EditText203"
         android:layout_width="254dp"
         android:layout_height="60dp"
         android:layout_marginEnd="16dp"
@@ -104,7 +105,7 @@
         app:layout_constraintVertical_bias="0.509" />
 
     <Button
-        android:id="@+id/AddBuilderB"
+        android:id="@+id/AddRoomR"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="173dp"
         android:layout_height="56dp"
@@ -118,10 +119,11 @@
         app:layout_constraintVertical_bias="0.699" />
 
     <Button
-        android:id="@+id/CancelBuilderB"
+        android:id="@+id/CancelRoomR"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="173dp"
         android:layout_height="56dp"
+        android:layout_marginBottom="104dp"
         android:background="@drawable/cancelbutton"
         android:text="Cancel"
         android:textColor="#000"
