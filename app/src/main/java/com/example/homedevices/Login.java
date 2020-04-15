@@ -17,6 +17,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        FileIO file=new FileIO ();
+        file.readFile();
         setContentView(R.layout.activity_login);
         Username = (EditText) findViewById(R.id.etUsername);
         Password = (EditText) findViewById(R.id.etPassword);
