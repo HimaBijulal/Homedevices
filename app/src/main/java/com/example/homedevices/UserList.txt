@@ -1,0 +1,4 @@
+A	name1	12345	0567299420	@gm	HimaBijulal	banana231
+B	name2	23456	0567299423	@gz	AbdNuami	msi321
+H	name3	34567	0567299424	@gi	s73000	rafmes
+R	name4	45678	0567299489	@go	aak231	ls430

@@ -12,8 +12,8 @@ public class Builder extends User {
 	}
 
 
-	public void Addhouse(String streetname, String district, int houseno, String label) {
-		Listofhouses.add(new House(streetname,district,houseno,label));
+	public void Addhouse(House house) {
+		Listofhouses.add(house);
 	}
 	public void Removehouse(String label) {
 		for (House house:Listofhouses)

@@ -7,7 +7,7 @@ import java.io.*;
 import java.util.*;
 
 public class FileIO {
-
+    private ArrayList <User> UserList;
     public void openFile() {
         try {
             BufferedReader br= new BufferedReader (new FileReader("UserList.txt"));
@@ -17,9 +17,10 @@ public class FileIO {
             System.out.println("File could not be found");
         }
     }
-    public void readFileUser(ArrayList<User>list ) {
+    public ArrayList<User> readFile() {
 
         try {
+            UserList=new ArrayList<>();
             BufferedReader br= new BufferedReader (new FileReader("UserList.txt"));
             String line= null;
             String type, username, password;
@@ -31,27 +32,26 @@ public class FileIO {
                 type=barrier[0];
                 name=barrier[1];
                 emirates=Integer.parseInt(barrier[2]);
-                id=Integer.parseInt(barrier[3]);
-                phone=Integer.parseInt(barrier[4]);
-                email=barrier[5];
-                username=barrier[6];
-                password=barrier[7];
+                phone=Integer.parseInt(barrier[3]);
+                email=barrier[4];
+                username=barrier[5];
+                password=barrier[6];
                 //User us= new User(name, emirates,phone,email) ;
                 if(type.equals("A"))
                 {
-                    list.add (new Admin(name,emirates,phone,email,username,password));
+                    UserList.add (new Admin(name,emirates,phone,email,username,password));
                 }
                 else if(type.equals("H"))
                 {
-                    list.add (new HouseOwner(name,emirates,phone,email,username,password));
+                    UserList.add (new HouseOwner(name,emirates,phone,email,username,password));
                 }
                 else if(type.equals("B"))
                 {
-                    list.add (new Builder(name,emirates,phone,email,username,password));
+                    UserList.add (new Builder(name,emirates,phone,email,username,password));
                 }
                 else if(type.equals("R"))
                 {
-                    list.add (new Resident(name,emirates,phone,email,username,password));
+                    UserList.add (new Resident(name,emirates,phone,email,username,password));
                 }
 
             }
@@ -59,9 +59,79 @@ public class FileIO {
 
         }catch (IOException e) {
             e.printStackTrace();
+            System.out.println("error in initializing userlist");
         }
-    }
 
+        try {
+            BufferedReader br= new BufferedReader (new FileReader("HouseList.txt"));
+
+            String Busername, Husername, Rusername, line;
+            String street, district, label;
+            int houseno, i=0;
+            while((line=br.readLine()) != null)
+            {
+                String barrier[]=line.split("\t");
+                Busername= barrier[0];
+                Husername= barrier[1];
+                Rusername= barrier[2];
+                street= barrier[3];
+                district= barrier[4];
+                houseno=Integer.parseInt(barrier[5]);
+                label=barrier[6];
+                House h=new House(street, district, houseno, label);
+                String resident[]=Rusername.split(",");
+
+
+
+                for(User u: UserList)
+                {
+                    if(u.getUsername().equals(Busername))
+                        ((Builder) u).Addhouse(h);
+                    else if(u.getUsername().equals(Husername))
+                        ((Resident) u).setHouse(h);
+                    else for(String s: resident)
+                        {
+                            if(u.getUsername().equals(s))
+                                ((Resident) u).setHouse(h);
+                        }
+                }
+            }
+
+
+        }catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("error in initializing houselist");
+        }
+
+        try {
+            BufferedReader br= new BufferedReader (new FileReader("RoomList.txt"));
+
+            String Busername, line;
+            String label, roomlabel;
+            int houseno, i=0;
+            while((line=br.readLine()) != null)
+            {
+                String barrier[]=line.split("\t");
+                Busername= barrier[0];
+                label=barrier[1];
+                roomlabel=barrier[2];
+
+
+                for(User u: UserList)
+                {
+                    if(u.getUsername().equals(Busername))
+                        ((Builder) u).Addroom(label,roomlabel);
+                }
+            }
+
+        }catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("error in initializing roomlist");
+        }
+
+
+        return UserList;
+    }
     void addBuilder(String name, int emiratesID, int phoneNumber, String emailAddress){
         //UserList.add(new Builder(name,emiratesID,phoneNumber,emailAddress));
     }

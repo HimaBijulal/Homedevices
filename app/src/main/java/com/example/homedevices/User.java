@@ -24,4 +24,8 @@ abstract class User implements Serializable {
 	public String getEmail(){
 		return EmailAddress;
 	}
+	public String getUsername()
+	{
+		return Username;
+	}
 }
