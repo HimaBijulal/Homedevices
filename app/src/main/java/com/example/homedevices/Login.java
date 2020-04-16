@@ -8,14 +8,32 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.util.ArrayList;
+
 public class Login extends AppCompatActivity implements View.OnClickListener {
 
     private EditText Username, Password;
     private Button Login;
+    private ArrayList<User> UserList;
 
+    public Login(){
+        UserList=new ArrayList<User>();
+        Admin u=new Admin("testOne",974,988,"testOne@test.com","testOne","password",UserList);
+        Builder j=new Builder("Jack",435,9717,"jack@test.com","jtest","jpass");
+        Builder n=new Builder("Norma",765,9716,"norma@test.com","ntest","npass");
+        Builder m=new Builder("Mary",546,9715,"mary@test.com","mtest","mpass");
+        j.Addhouse(new House("street1","dist 19",22,"House1"));
+        n.Addhouse(new House("street2","dist 13",21,"House2"));
+
+        UserList.add(j);
+        UserList.add(u);
+        UserList.add(n);
+        UserList.add(m);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         FileIO file=new FileIO ();
         file.readFile();
@@ -25,20 +43,22 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         Login = findViewById(R.id.etLoginButton);
         Login.setOnClickListener(this);
 
+
     }
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.etLoginButton: {
                // if (Username.getText().toString() == "admin" && Password.getText().toString() == "admin") {
-                Builder c =new Builder("a",1,2,"A@a.com","class","d");
-                c.Addhouse(new House("street1","dist 19",22,"House1"));
-                c.Addhouse(new House("street2","dist 13",21,"House2"));
-                Intent intent = new Intent(this, Dashboard.class).putExtra("User",c);
-                startActivity(intent);
-                System.out.println("NoBlahPls");
-                    System.out.println("Blah");
-                    System.out.println("Hello");
+                User c;// "class","d");
+                for(int i=0;i<UserList.size();i++){
+                    if((Username.getText().toString().equals(UserList.get(i).getUsername()))&&Password.getText().toString().equals(UserList.get(i).getPassword())){
+                        c=UserList.get(i);
+
+                 //Builder c =new Builder("a",1,2,"A@a.com","class","d");
+
+                    Intent intent = new Intent(this, Dashboard.class).putExtra("User",c);
+                    startActivity(intent);
                     break;
                // }
             }
@@ -46,4 +66,4 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     }
 
 
-}
+}}}
