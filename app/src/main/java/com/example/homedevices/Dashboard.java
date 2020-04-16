@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class Dashboard extends AppCompatActivity implements View.OnClickListener {
 
-    private Button add_builder,add_house,del_house,add_room,del_room;
+    private Button add_builder,add_house,del_house,add_room,del_room,Logoff;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,6 +25,8 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
         del_house.setOnClickListener(this);
         add_room.setOnClickListener(this);
         del_room.setOnClickListener(this);
+        Logoff = findViewById(R.id.etLoginButton);
+        Logoff.setOnClickListener(this);
     }
     @Override
     public void onClick(View v) {
@@ -54,6 +56,11 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
             }
             case R.id.delroom_button:{
                 Intent intent = new Intent(this, delroom.class).putExtra("User",c);;
+                startActivity(intent);
+                break;
+            }
+            case R.id.etLogOffButton:{
+                Intent intent = new Intent(this, Login.class).putExtra("User",c);
                 startActivity(intent);
                 break;
             }

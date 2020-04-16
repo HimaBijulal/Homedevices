@@ -16,9 +16,24 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     private Button Login;
     private ArrayList<User> UserList;
 
+    public Login(){
+        UserList=new ArrayList<User>();
+        Admin u=new Admin("testOne",974,988,"testOne@test.com","testOne","password",UserList);
+        Builder j=new Builder("Jack",435,9717,"jack@test.com","jtest","jpass");
+        Builder n=new Builder("Norma",765,9716,"norma@test.com","ntest","npass");
+        Builder m=new Builder("Mary",546,9715,"mary@test.com","mtest","mpass");
+        j.Addhouse(new House("street1","dist 19",22,"House1"));
+        n.Addhouse(new House("street2","dist 13",21,"House2"));
+
+        UserList.add(j);
+        UserList.add(u);
+        UserList.add(n);
+        UserList.add(m);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        UserList=new ArrayList<User>();
+
         super.onCreate(savedInstanceState);
         FileIO file=new FileIO ();
         file.readFile();
@@ -27,16 +42,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         Password = (EditText) findViewById(R.id.etPassword);
         Login = findViewById(R.id.etLoginButton);
         Login.setOnClickListener(this);
-        Admin u=new Admin("testOne",974,988,"testOne@test.com","testOne","password",UserList);
-        Builder j=new Builder("Jack",435,9717,"jack@test.com","jtest","jpass");
-        Builder n=new Builder("Norma",765,9716,"norma@test.com","ntest","npass");
-        Builder m=new Builder("Mary",546,9715,"mary@test.com","mtest","mpass");
-        j.Addhouse(new House("street1","dist 19",22,"House1"));
-        n.Addhouse(new House("street2","dist 13",21,"House2"));
-        UserList.add(j);
-        UserList.add(u);
-        UserList.add(n);
-        UserList.add(m);
+
+
     }
     @Override
     public void onClick(View v) {
