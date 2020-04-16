@@ -34,6 +34,9 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         UserList.add(u);
         UserList.add(n);
         UserList.add(m);
+        j.Addhouse(new House("street2","dist 13",21,"House2"));
+        m.Addhouse(new House("street1","dist 19",22,"House1"));
+
     }
     @Override
     public void onClick(View v) {
@@ -44,13 +47,14 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                 for(int i=0;i<UserList.size();i++){
                     if((Username.getText().toString()==UserList.get(i).getUsername())&&Password.getText().toString()==UserList.get(i).getPassword()){
                         c=UserList.get(i);
+                        Intent intent = new Intent(this, Dashboard.class).putExtra("User",c);
+                        startActivity(intent);
                     }
                 }
                 //Builder c =new Builder("a",1,2,"A@a.com","class","d");
-                c.Addhouse(new House("street1","dist 19",22,"House1"));
-                c.Addhouse(new House("street2","dist 13",21,"House2"));
-                Intent intent = new Intent(this, Dashboard.class).putExtra("User",c);
-                startActivity(intent);
+                //m.Addhouse(new House("street1","dist 19",22,"House1"));
+                //j.Addhouse(new House("street2","dist 13",21,"House2"));
+
                 System.out.println("NoBlahPls");
                     System.out.println("Blah");
                     System.out.println("Hello");
