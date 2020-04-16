@@ -3,15 +3,15 @@ package com.example.homedevices;
 
 import java.util.ArrayList;
 
-public class Admin extends User {
-	public ArrayList<Builder> ListOfBuilders;
+class Admin extends User {
 
-	public Admin(String name, int emiratesID, int phoneNumber, String emailAddress, String username, String password) {
+	private ArrayList <User>UserList;
+	Admin(String name, int emiratesID, int phoneNumber, String emailAddress, String username, String password, ArrayList<User> UserList) {
 		super(name, emiratesID, phoneNumber, emailAddress, username, password);
-		ListOfBuilders= new ArrayList<>();
+		this.UserList = UserList;
 	}
 
-	public void AddBuilder(Builder b) {
-		ListOfBuilders.add(b);
+	void AddBuilder(Builder b) {
+		UserList.add(b);
 	}
 }

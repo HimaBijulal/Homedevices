@@ -1,11 +1,12 @@
 package com.example.homedevices;
 
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Set;
 
 
-public class House {
+public class House implements Serializable {
 	private  String Streetname;
 	private String District;
 	private int Houseno;
@@ -17,6 +18,7 @@ public class House {
 		District = district;
 		Houseno = houseno;
 		this.label = label;
+		Listofrooms = new ArrayList<Room>();
 	}
 
 	String getLabel() {

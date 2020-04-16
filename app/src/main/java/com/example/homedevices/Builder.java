@@ -1,6 +1,9 @@
 
 package com.example.homedevices;
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
+
 public class Builder extends User {
 
 
@@ -9,6 +12,7 @@ public class Builder extends User {
 
 	Builder(String name,  int emiratesID, int phoneNumber, String emailAddress, String username, String password) {
 		super(name, emiratesID, phoneNumber, emailAddress, username, password);
+		Listofhouses = new ArrayList<House>();
 	}
 
 
@@ -36,6 +40,14 @@ public class Builder extends User {
 				house.delRoom(Roomlabel);
 				break;
 			}
+	}
+	public List<String> getHouseLabels(){
+		List<String> arr= new ArrayList<String>();
+		for(int i=0;i<Listofhouses.size();i++){
+			arr.add(Listofhouses.get(i).getLabel());
+		}
+		return arr;
+
 	}
 	public void Addoutlet() {
 	}

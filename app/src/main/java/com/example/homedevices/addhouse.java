@@ -22,7 +22,7 @@ public class addhouse extends AppCompatActivity implements View.OnClickListener 
         StreetName = (EditText) findViewById(R.id.editText);
         HouseNo = (EditText) findViewById(R.id.editText5);
         Label=(EditText) findViewById(R.id.editText2);
-        Add = findViewById(R.id.AddRoomR);
+        Add = findViewById(R.id.AddHouseR);
         Cancel = findViewById(R.id.CancelRoomR);
         Add.setOnClickListener(this);
         Cancel.setOnClickListener(this);
@@ -32,16 +32,16 @@ public class addhouse extends AppCompatActivity implements View.OnClickListener 
     public void onClick(View v) {
 
         switch (v.getId()) {
-            case R.id.AddRoomR: {
-                b.Addhouse(StreetName,District,HouseNo,Label);
+            case R.id.AddHouseR: {
+                b.Addhouse(new House(StreetName.getText().toString(),District.getText().toString(),Integer.parseInt(HouseNo.getText().toString()),Label.getText().toString()));
                 //Add builder object to list of builders
-                Intent intent = new Intent(this, Dashboard.class).putExtra("User",c);;
+                Intent intent = new Intent(this, Dashboard.class).putExtra("User",b);;
                 startActivity(intent);
                 break;
                 // }
             }
             case R.id.CancelRoomR: {
-                Intent intent = new Intent(this, Dashboard.class).putExtra("User",c);;
+                Intent intent = new Intent(this, Dashboard.class).putExtra("User",b);;
                 startActivity(intent);
             }
         }

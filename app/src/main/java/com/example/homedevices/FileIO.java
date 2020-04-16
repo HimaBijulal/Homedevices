@@ -39,7 +39,7 @@ public class FileIO {
                 //User us= new User(name, emirates,phone,email) ;
                 if(type.equals("A"))
                 {
-                    UserList.add (new Admin(name,emirates,phone,email,username,password));
+                    UserList.add (new Admin(name,emirates,phone,email,username,password,UserList));
                 }
                 else if(type.equals("H"))
                 {
@@ -130,7 +130,7 @@ public class FileIO {
         }
 
 
-        try {
+        /*try {
             BufferedReader br= new BufferedReader (new FileReader("BuilderList.txt"));
 
             String line;
@@ -155,7 +155,7 @@ public class FileIO {
         }catch (IOException e) {
             e.printStackTrace();
             System.out.println("error in initializing Builderlist");
-        }
+        }*/
 
 
 
