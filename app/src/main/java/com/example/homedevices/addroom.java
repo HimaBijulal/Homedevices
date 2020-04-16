@@ -58,12 +58,7 @@ public class addroom extends AppCompatActivity implements View.OnClickListener {
                 startActivity(intent);
             }
         }
-
-
-
-
 }
-
     public class CustomOnItemSelectedListener implements AdapterView.OnItemSelectedListener {
 
         public void onItemSelected(AdapterView<?> parent, View view, int pos,long id) {
