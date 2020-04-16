@@ -40,7 +40,7 @@ public class addhouse extends AppCompatActivity implements View.OnClickListener 
                 break;
                 // }
             }
-            case R.id.CancelHouseHB: {
+            case R.id.CancelRoomR: {
                 Intent intent = new Intent(this, Dashboard.class).putExtra("User",c);;
                 startActivity(intent);
             }
