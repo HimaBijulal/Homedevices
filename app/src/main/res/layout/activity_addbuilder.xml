@@ -5,6 +5,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".addbuilder">
+
+    <TextView
+
+        android:id="@+id/textView6"
+        android:layout_width="123dp"
+        android:layout_height="29dp"
+        android:fontFamily="sans-serif-black"
+        android:text="EmailID"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.062"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.658" />
+
+    <EditText
+        android:id="@+id/emailbuild"
+        android:layout_width="254dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="12dp"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.677" />
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="417dp"
@@ -156,20 +183,6 @@
         app:layout_constraintVertical_bias="0.35" />
 
     <Button
-        android:id="@+id/button2"
-        style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="173dp"
-        android:layout_height="56dp"
-        android:background="@drawable/bgbuttonlogin"
-        android:text="Add"
-        android:textColor="#FFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.699" />
-
-    <Button
         android:id="@+id/cancelbutton"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="173dp"
@@ -181,5 +194,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2"
-        app:layout_constraintVertical_bias="0.126" />
+        app:layout_constraintVertical_bias="0.22" />
+
+    <Button
+        android:id="@+id/button2"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="173dp"
+        android:layout_height="56dp"
+        android:background="@drawable/bgbuttonlogin"
+        android:text="Add"
+        android:textColor="#FFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.792" />
 </androidx.constraintlayout.widget.ConstraintLayout>

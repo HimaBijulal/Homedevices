@@ -8,7 +8,7 @@ public class Admin extends User {
 		super(name, emiratesID, phoneNumber, emailAddress, username, password);
 	}
 
-	public void AddBuilder(FileIO file, String name, int emiratesID, int phoneNumber, String emailAddress) {
+	public void AddBuilder(FileIO file, String name, int emiratesID, int phoneNumber, String emailAddress,String usern,String pass) {
 		file.addBuilder(name,emiratesID,phoneNumber,emailAddress);
 	}
 }

@@ -12,12 +12,13 @@ import java.io.Serializable;
 
 public class addbuilder extends AppCompatActivity implements View.OnClickListener, Serializable {
 
-    private EditText Name, EmiratesID, PhoneNo, Username, Password;
+    private EditText Name, EmiratesID, PhoneNo, Username, Password,EmailAddress;
     private Button Add, Cancel;
     private Admin c;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        FileIO builderfile=new FileIO()
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addbuilder);
         Name = (EditText) findViewById(R.id.edittext5);
@@ -27,6 +28,7 @@ public class addbuilder extends AppCompatActivity implements View.OnClickListene
         Password = (EditText) findViewById(R.id.editText4);
         Add = findViewById(R.id.button2);
         Cancel = findViewById(R.id.cancelbutton);
+        EmailAddress=findViewById(R.id.emailbuild);
         Add.setOnClickListener(this);
         Cancel.setOnClickListener(this);
         c= (Admin) getIntent().getSerializableExtra("User");
