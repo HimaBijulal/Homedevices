@@ -44,10 +44,10 @@ public class addbuilder extends AppCompatActivity implements View.OnClickListene
         switch (v.getId()) {
             case R.id.button2: {
                 // if (Username.getText().toString() == "admin" && Password.getText().toString() == "admin") {
-                //Builder b=new Builder(Name.getText().toString(), EmiratesID.getText()., PhoneNo.getText().toString(), Username.getText().toString(), Password.getText().toString());
+                Builder b=new Builder(Name.getText().toString(), EmiratesID.getText()., PhoneNo.getText().toString(), Username.getText().toString(), Password.getText().toString());
                 //Builder c= (Builder) getIntent().getSerializableExtra("User");
                 //System.out.println(c.getEmail()+"");
-                c.AddBuilder(Name,EmiratesID,PhoneNo,EmailAddress,Username,Password);
+                c.AddBuilder(b);
                 //Add builder object to list of builders
                 Intent intent = new Intent(this, Dashboard.class);
                 startActivity(intent);

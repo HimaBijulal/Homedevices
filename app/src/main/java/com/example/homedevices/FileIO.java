@@ -130,6 +130,35 @@ public class FileIO {
         }
 
 
+        try {
+            BufferedReader br= new BufferedReader (new FileReader("BuilderList.txt"));
+
+            String line;
+            String name, email, Busername, password;
+            int emirates, phone;
+            while((line=br.readLine()) != null)
+            {
+                String barrier[]=line.split("\t");
+                name= barrier[0];
+                emirates=Integer.parseInt(barrier[1]);
+                phone=Integer.parseInt(barrier[2]);
+                email=barrier[3];
+                Busername=barrier[4];
+                password=barrier[5];
+                for(User u: UserList)
+                {
+                    if(u instanceof Admin)
+                        ((Admin) u).AddBuilder(new Builder(name,emirates,phone, email, Busername, password));
+                }
+            }
+
+        }catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("error in initializing Builderlist");
+        }
+
+
+
         return UserList;
     }
     void addBuilder(String name, int emiratesID, int phoneNumber, String emailAddress){
