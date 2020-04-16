@@ -24,8 +24,19 @@ abstract class User implements Serializable {
 	public String getEmail(){
 		return EmailAddress;
 	}
-	public String getUsername()
-	{
+	public String getUsername() {
 		return Username;
+	}
+	public String getPassword() {
+		return Password;
+	}
+	public int getEmiratesID() {
+		return EmiratesID;
+	}
+	public int getPhoneNumber() {
+		return PhoneNumber;
+	}
+	public String getName() {
+		return Name;
 	}
 }
