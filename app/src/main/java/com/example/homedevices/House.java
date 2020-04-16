@@ -3,6 +3,7 @@ package com.example.homedevices;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 
@@ -35,6 +36,14 @@ public class House implements Serializable {
 				Listofrooms.remove(room);
 				break;
 			}
+	}
+	public List<String> getRoomabels(){
+		List<String> arr= new ArrayList<String>();
+		for(int i=0;i<Listofrooms.size();i++){
+			arr.add(Listofrooms.get(i).getLabel());
+		}
+		return arr;
+
 	}
 
 	public void GenerateReport() {}
