@@ -49,6 +49,15 @@ public class Builder extends User {
 		return arr;
 
 	}
+	public List<String> getRoomLabels(String HouseLabel){
+		for(House house: Listofhouses){
+			if(house.getLabel().equals(HouseLabel)){
+				return house.getRoomabels();
+			}
+		}
+
+
+	}
 	public void Addoutlet() {
 	}
 	public void Removeoutlet() {
