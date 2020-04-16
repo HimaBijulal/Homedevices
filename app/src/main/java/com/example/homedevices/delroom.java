@@ -15,7 +15,7 @@ public class delroom extends AppCompatActivity implements View.OnClickListener{
     private Spinner HouseID,RoomID;
     private Builder b;
     private Button Cancel,delete;
-
+    private delroom d;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         b= (Builder) getIntent().getSerializableExtra("User");
@@ -35,11 +35,13 @@ public class delroom extends AppCompatActivity implements View.OnClickListener{
                 android.R.layout.simple_spinner_item, b.getRoomLabels(String.valueOf(HouseID.getSelectedItem())));
         dataAdapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         RoomID.setAdapter(dataAdapter2);
-        RoomID.setOnItemSelectedListener(new delroom.CustomOnItemSelectedListener());
+        RoomID.setOnItemSelectedListener(new delroom.CustomOnItemSelectedListener2());
         Cancel.setOnClickListener(this);
         delete.setOnClickListener(this);
+        d=this;
 
     }
+
     @Override
     public void onClick(View v) {
 
@@ -56,6 +58,7 @@ public class delroom extends AppCompatActivity implements View.OnClickListener{
                 Intent intent = new Intent(this, Dashboard.class).putExtra("User",b);
                 startActivity(intent);
             }
+
         }
 
 
@@ -64,6 +67,27 @@ public class delroom extends AppCompatActivity implements View.OnClickListener{
     }
 
     public class CustomOnItemSelectedListener implements AdapterView.OnItemSelectedListener {
+
+        public void onItemSelected(AdapterView<?> parent, View view, int pos,long id) {
+            Toast.makeText(parent.getContext(),
+                    "OnItemSelectedListener : " + parent.getItemAtPosition(pos).toString(),
+                    Toast.LENGTH_SHORT).show();
+            parent.getSelectedItem();
+            ArrayAdapter<String> dataAdapter2 = new ArrayAdapter<String>(d,
+                    android.R.layout.simple_spinner_item, b.getRoomLabels(String.valueOf(HouseID.getSelectedItem())));
+            dataAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        }
+
+        @Override
+        public void onNothingSelected(AdapterView<?> arg0) {
+            // TODO Auto-generated method stub
+        }
+
+
+    }
+
+    public class CustomOnItemSelectedListener2 implements AdapterView.OnItemSelectedListener {
 
         public void onItemSelected(AdapterView<?> parent, View view, int pos,long id) {
             Toast.makeText(parent.getContext(),
@@ -78,5 +102,7 @@ public class delroom extends AppCompatActivity implements View.OnClickListener{
 
 
     }
+
+
 }
 
