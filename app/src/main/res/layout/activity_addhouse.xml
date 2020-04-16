@@ -99,6 +99,7 @@
         android:layout_width="254dp"
         android:layout_height="60dp"
         android:layout_marginEnd="16dp"
+        android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -111,6 +112,7 @@
         android:layout_height="56dp"
         android:background="@drawable/bgbuttonlogin"
         android:text="Add"
+
         android:textColor="#FFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
