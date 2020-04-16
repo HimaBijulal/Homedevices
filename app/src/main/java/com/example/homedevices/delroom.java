@@ -76,6 +76,7 @@ public class delroom extends AppCompatActivity implements View.OnClickListener{
             ArrayAdapter<String> dataAdapter2 = new ArrayAdapter<String>(d,
                     android.R.layout.simple_spinner_item, b.getRoomLabels(String.valueOf(HouseID.getSelectedItem())));
             dataAdapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            RoomID.setAdapter(dataAdapter2);
 
         }
 
