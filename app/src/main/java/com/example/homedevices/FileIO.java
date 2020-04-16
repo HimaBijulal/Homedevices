@@ -39,7 +39,7 @@ public class FileIO {
                 //User us= new User(name, emirates,phone,email) ;
                 if(type.equals("A"))
                 {
-                    UserList.add (new Admin(name,emirates,phone,email,username,password,UserList));
+                    UserList.add (new Admin(name,emirates,phone,email,username,password));
                 }
                 else if(type.equals("H"))
                 {
