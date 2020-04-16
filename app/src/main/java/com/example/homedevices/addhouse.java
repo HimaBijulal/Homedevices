@@ -10,7 +10,7 @@ import android.widget.EditText;
 
 public class addhouse extends AppCompatActivity implements View.OnClickListener {
 
-    private EditText District,StreetName,HouseNo;
+    private EditText District,StreetName,HouseNo,Label;
     private Button Add,Cancel;
     private Builder b;
 
@@ -20,10 +20,10 @@ public class addhouse extends AppCompatActivity implements View.OnClickListener 
         setContentView(R.layout.activity_addhouse);
         District = (EditText) findViewById(R.id.EditText203);
         StreetName = (EditText) findViewById(R.id.editText);
-        HouseNo = (EditText) findViewById(R.id.editText2);
-        //Label=(EditText) findViewById(R.id.editText75)
-        Add = findViewById(R.id.AddHouseH);
-        Cancel = findViewById(R.id.CancelHouseH);
+        HouseNo = (EditText) findViewById(R.id.editText5);
+        Label=(EditText) findViewById(R.id.editText2);
+        Add = findViewById(R.id.AddRoomR);
+        Cancel = findViewById(R.id.CancelRoomR);
         Add.setOnClickListener(this);
         Cancel.setOnClickListener(this);
         b= (Builder) getIntent().getSerializableExtra("User");
@@ -32,16 +32,16 @@ public class addhouse extends AppCompatActivity implements View.OnClickListener 
     public void onClick(View v) {
 
         switch (v.getId()) {
-            case R.id.AddHouseH: {
+            case R.id.AddRoomR: {
                 b.Addhouse(StreetName,District,HouseNo,Label);
                 //Add builder object to list of builders
-                Intent intent = new Intent(this, Dashboard.class);
+                Intent intent = new Intent(this, Dashboard.class).putExtra("User",c);;
                 startActivity(intent);
                 break;
                 // }
             }
             case R.id.CancelHouseHB: {
-                Intent intent = new Intent(this, Dashboard.class);
+                Intent intent = new Intent(this, Dashboard.class).putExtra("User",c);;
                 startActivity(intent);
             }
         }

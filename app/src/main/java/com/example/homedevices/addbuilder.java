@@ -50,13 +50,14 @@ public class addbuilder extends AppCompatActivity implements View.OnClickListene
                 //System.out.println(c.getEmail()+"");
                 c.AddBuilder(b);
                 //Add builder object to list of builders
-                Intent intent = new Intent(this, Dashboard.class);
+                Intent intent = new Intent(this, Dashboard.class).putExtra("User",c);;
                 startActivity(intent);
                 break;
                 // }
             }
             case R.id.cancelbutton: {
-                Intent intent = new Intent(this, Dashboard.class);
+                Intent intent = new Intent(this, Dashboard.class).putExtra("User",c);;
+
                 startActivity(intent);
             }
         }
