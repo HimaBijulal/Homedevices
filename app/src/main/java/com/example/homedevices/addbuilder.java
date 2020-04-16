@@ -23,7 +23,7 @@ public class addbuilder extends AppCompatActivity implements View.OnClickListene
         setContentView(R.layout.activity_addbuilder);
         Name = (EditText) findViewById(R.id.edittext5);
         EmiratesID = (EditText) findViewById(R.id.editText);
-        PhoneNo = Integer.parseInt((EditText) findViewById(R.id.editText2);
+        PhoneNo = (EditText) findViewById(R.id.editText2);
         Username = (EditText) findViewById(R.id.editText3);
         Password = (EditText) findViewById(R.id.editText4);
         Add = findViewById(R.id.button2);
@@ -45,7 +45,7 @@ public class addbuilder extends AppCompatActivity implements View.OnClickListene
             case R.id.button2: {
 
                 // if (Username.getText().toString() == "admin" && Password.getText().toString() == "admin") {
-                Builder b=new Builder(Name.getText().toString(), EmiratesID, Integer.parseInt(PhoneNo.getText().toString()), Username.getText().toString(), Password.getText().toString());
+                Builder b=new Builder(Name.getText().toString(), Integer.parseInt(EmiratesID.getText().toString()), Integer.parseInt(PhoneNo.getText().toString()), EmailAddress.getText().toString(),Username.getText().toString(), Password.getText().toString());
                 //Builder c= (Builder) getIntent().getSerializableExtra("User");
                 //System.out.println(c.getEmail()+"");
                 c.AddBuilder(b);
@@ -55,7 +55,7 @@ public class addbuilder extends AppCompatActivity implements View.OnClickListene
                 break;
                 // }
             }
-            case R.id.CancelBuilderB: {
+            case R.id.cancelbutton: {
                 Intent intent = new Intent(this, Dashboard.class);
                 startActivity(intent);
             }
