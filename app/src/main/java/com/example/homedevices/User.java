@@ -61,7 +61,7 @@ abstract class User implements Serializable {
 
 	}
 	public static boolean isValidEmail(String s){
-		if(s.contains("@")&&s.contains("."))
+		if(s.contains("@")&&s.contains(".com"))
 			return true;
 		return false;
 	}
