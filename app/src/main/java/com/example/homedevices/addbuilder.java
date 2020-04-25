@@ -1,8 +1,10 @@
 package com.example.homedevices;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.SpannableStringBuilder;
 import android.view.View;
@@ -38,17 +40,33 @@ public class addbuilder extends AppCompatActivity implements View.OnClickListene
     }
 
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     public void onClick(View v) {
 
         switch (v.getId()) {
             case R.id.button2: {
 
-                // if (Username.getText().toString() == "admin" && Password.getText().toString() == "admin") {
-                Builder b=new Builder(Name.getText().toString(), Integer.parseInt(EmiratesID.getText().toString()), Integer.parseInt(PhoneNo.getText().toString()), EmailAddress.getText().toString(),Username.getText().toString(), Password.getText().toString());
-                //Builder c= (Builder) getIntent().getSerializableExtra("User");
-                //System.out.println(c.getEmail()+"");
-                c.AddBuilder(b);
+                boolean NF,IDF,PF,UF,PWF,EF;
+                Builder b;
+                if(!User.isValidName(Name.getText().toString()))
+                    System.out.println("NameError");
+                else if(!User.isValidID(Integer.parseInt(EmiratesID.getText().toString())))
+                    System.out.println("IDError");
+                else if(!User.isValidPhoneNum(Integer.parseInt(PhoneNo.getText().toString())))
+                    System.out.println("PhoneNumError");
+                else if(!User.isValidEmail(EmailAddress.getText().toString()))
+                    System.out.println("EmailError");
+                else if(!User.isValidUsername(Username.getText().toString()))
+                    System.out.println("UsernameError");
+                else if(!User.isValidPassword(Password.getText().toString()))
+                    System.out.println("PasswordError");
+                else
+                    c.AddBuilder(new Builder(Name.getText().toString(), Integer.parseInt(EmiratesID.getText().toString()),
+                            Integer.parseInt(PhoneNo.getText().toString()), EmailAddress.getText().toString(),
+                            Username.getText().toString(), Password.getText().toString()));
+
+
                 //Add builder object to list of builders
                 Intent intent = new Intent(this, Dashboard.class).putExtra("User",c);;
                 startActivity(intent);
