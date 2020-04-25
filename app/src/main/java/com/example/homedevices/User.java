@@ -3,6 +3,10 @@
 package com.example.homedevices;
 
 
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
+
 import java.io.Serializable;
 
 abstract class User implements Serializable {
@@ -38,5 +42,39 @@ abstract class User implements Serializable {
 	}
 	public String getName() {
 		return Name;
+	}
+	@RequiresApi(api = Build.VERSION_CODES.N)
+	public static boolean isValidName(String s){
+		if(s.length() <= 32 && s.chars().allMatch(Character::isLetter))
+			return true;
+		return false;
+	}
+	public static boolean isValidID(int s){
+		if(String.valueOf(s).length() ==15 && String.valueOf(s).matches("\\d+")&&Global.isuniqeID(s))
+			return true;
+		return false;
+	}
+	public static boolean isValidPhoneNum(int s){
+		if(String.valueOf(s).length() ==10 && String.valueOf(s).matches("\\d+"))
+			return true;
+		return false;
+
+	}
+	public static boolean isValidEmail(String s){
+		if(s.contains("@")&&s.contains("."))
+			return true;
+		return false;
+	}
+	public static boolean isValidUsername(String s){
+		if(s.length() <= 32&& s.matches("^[a-zA-Z0-9]*$"))
+			return true;
+		return false;
+
+	}
+	public static boolean isValidPassword(String s){
+		if(s.length() >=8 && s.length()<=32)
+			return true;
+		return false;
+
 	}
 }
