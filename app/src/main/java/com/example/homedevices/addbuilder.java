@@ -47,7 +47,7 @@ public class addbuilder extends AppCompatActivity implements View.OnClickListene
         switch (v.getId()) {
             case R.id.button2: {
 
-                boolean NF,IDF,PF,UF,PWF,EF;
+                //boolean NF,IDF,PF,UF,PWF,EF;
                 Builder b;
                 if(!User.isValidName(Name.getText().toString()))
                     System.out.println("NameError");
