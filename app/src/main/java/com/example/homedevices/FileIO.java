@@ -10,7 +10,7 @@ public class FileIO {
     private ArrayList <User> UserList;
     public void openFile() {
         try {
-            BufferedReader br= new BufferedReader (new FileReader("UserList.txt"));
+            BufferedReader br= new BufferedReader (new FileReader("C:\\Users\\Abdul Ahad Khan\\AndroidStudioProjects\\Homedevices\\app\\src\\main\\java\\com\\example\\homedevices\\UserList.txt"));
         } catch (FileNotFoundException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -21,7 +21,7 @@ public class FileIO {
 
         try {
             UserList=new ArrayList<>();
-            BufferedReader br= new BufferedReader (new FileReader("UserList.txt"));
+            BufferedReader br= new BufferedReader (new FileReader("C:\\Users\\Abdul Ahad Khan\\AndroidStudioProjects\\Homedevices\\app\\src\\main\\java\\com\\example\\homedevices\\UserList.txt"));
             String line= null;
             String type, username, password;
             String name, email;
@@ -63,7 +63,7 @@ public class FileIO {
         }
 
         try {
-            BufferedReader br= new BufferedReader (new FileReader("HouseList.txt"));
+            BufferedReader br= new BufferedReader (new FileReader("C:\\Users\\Abdul Ahad Khan\\AndroidStudioProjects\\Homedevices\\app\\src\\main\\java\\com\\example\\homedevices\\HouseList.txt"));
 
             String Busername, Husername, Rusername, line;
             String street, district, label;
@@ -104,7 +104,7 @@ public class FileIO {
         }
 
         try {
-            BufferedReader br= new BufferedReader (new FileReader("RoomList.txt"));
+            BufferedReader br= new BufferedReader (new FileReader("C:\\Users\\Abdul Ahad Khan\\AndroidStudioProjects\\Homedevices\\app\\src\\main\\java\\com\\example\\homedevices\\RoomList.txt"));
 
             String Busername, line;
             String label, roomlabel;
