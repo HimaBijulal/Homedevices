@@ -9,9 +9,10 @@ import android.widget.Button;
 
 public class Dashboard extends AppCompatActivity implements View.OnClickListener {
 
-    private Button add_builder,add_house,del_house,add_room,del_room;
+    private Button add_builder,add_house,del_house,add_room,del_room,Logoff;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        User c= (User) getIntent().getSerializableExtra("User");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
         add_builder = findViewById(R.id.addbuilder_button);
@@ -19,12 +20,27 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
         del_house = findViewById(R.id.delhouse_button);
         add_room = findViewById(R.id.addroom_button);
         del_room=findViewById(R.id.delroom_button);
+        Logoff = findViewById(R.id.etLogOffButton);
+        Logoff.setOnClickListener(this);
 
-        add_builder.setOnClickListener(this);
-        add_house.setOnClickListener(this);
-        del_house.setOnClickListener(this);
-        add_room.setOnClickListener(this);
-        del_room.setOnClickListener(this);
+        if(c instanceof Admin){
+            add_builder.setOnClickListener(this);
+            add_house.setVisibility(View.GONE);
+            del_house.setVisibility(View.GONE);
+            add_room.setVisibility(View.GONE);
+            del_room.setVisibility(View.GONE);
+
+        }
+        else{
+            add_house.setOnClickListener(this);
+            del_house.setOnClickListener(this);
+            add_room.setOnClickListener(this);
+            del_room.setOnClickListener(this);
+            add_builder.setVisibility(View.GONE);
+        }
+
+
+
     }
     @Override
     public void onClick(View v) {
@@ -54,6 +70,11 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
             }
             case R.id.delroom_button:{
                 Intent intent = new Intent(this, delroom.class).putExtra("User",c);;
+                startActivity(intent);
+                break;
+            }
+            case R.id.etLogOffButton:{
+                Intent intent = new Intent(this, Login.class).putExtra("User",c);
                 startActivity(intent);
                 break;
             }
