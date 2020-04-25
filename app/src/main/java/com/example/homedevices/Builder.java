@@ -19,6 +19,7 @@ public class Builder extends User {
 	public void Addhouse(House house) {
 		Listofhouses.add(house);
 	}
+
 	public void Removehouse(String label) {
 		for (House house:Listofhouses)
 			if(house.getLabel().equals(label) ){
