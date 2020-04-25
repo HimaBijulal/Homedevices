@@ -66,7 +66,7 @@ abstract class User implements Serializable {
 		return false;
 	}
 	public static boolean isValidUsername(String s){
-		if(s.length() <= 32&& s.matches("^[a-zA-Z0-9]*$"))
+		if(s.length() <= 32&& s.matches("^[a-zA-Z0-9]*$") && String.valueOf(s).matches("\\d+")&&Global.isuniqeUsername(s) )
 			return true;
 		return false;
 

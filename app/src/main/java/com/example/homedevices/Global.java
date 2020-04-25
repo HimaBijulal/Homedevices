@@ -12,4 +12,11 @@ public class Global{
         }
         return true;
     }
+    public static boolean isuniqeUsername(String s ){
+        for(User user: UserList){
+            if(user.getUsername() ==s)
+                return false;
+        }
+        return true;
+    }
 }
