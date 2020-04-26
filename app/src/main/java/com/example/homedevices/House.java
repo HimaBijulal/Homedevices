@@ -1,6 +1,10 @@
 package com.example.homedevices;
 
 
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +17,7 @@ public class House implements Serializable {
 	private int Houseno;
 	private String label;
 	private ArrayList<Room> Listofrooms;
+	//Builder b;
 
 	House(String streetname, String district, int houseno, String label) {
 		Streetname = streetname;
@@ -46,6 +51,30 @@ public class House implements Serializable {
 
 	}
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public static boolean isValidSName(String s){
+        if(s.length() <= 32&& s.matches("^[a-zA-Z0-9]*$"))
+            return true;
+        return false;
+    }
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public static boolean isValidDistrict(String s){
+        if(s.length() <= 32&& s.matches("^[a-zA-Z0-9]*$"))
+            return true;
+        return false;
+    }
+    public static boolean isValidHNo(int s){
+        if(String.valueOf(s).length() <=3 && String.valueOf(s).matches("\\d+"))
+            return true;
+        return false;
+
+    }
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    public static boolean isValidHLabel(Builder b, String s){
+        if(s.length() <= 32&& s.matches("^[a-zA-Z0-9]*$")&&Builder.isUniqueLabel(b,s))
+            return true;
+        return false;
+    }
 	public void GenerateReport() {}
 	public void GetPower() {}
 }

@@ -79,4 +79,11 @@ public class Builder extends User {
 		return null;
 		// end-user-code
 	}
+	public static boolean isUniqueLabel(Builder b, String s){
+	    for(House h:b.Listofhouses){
+	        if(h.getLabel()==s)
+	            return false;
+        }
+	    return true;
+    }
 }
