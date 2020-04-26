@@ -45,17 +45,17 @@ abstract class User implements Serializable {
 	}
 	@RequiresApi(api = Build.VERSION_CODES.N)
 	public static boolean isValidName(String s){
-		if(s.length() <= 32 && s.chars().allMatch(Character::isLetter))
+		if(s.length() <= 32 && s.matches("^[ A-Za-z]+$"))
 			return true;
 		return false;
 	}
 	public static boolean isValidID(String s){
-		if(String.valueOf(s).length() ==15 && String.valueOf(s).matches("\\d+")&&Global.isuniqeID(s))
+		if(s.length() ==15 && s.matches("\\d+")&&Global.isuniqeID(s))
 			return true;
 		return false;
 	}
 	public static boolean isValidPhoneNum(String s){
-		if(String.valueOf(s).length() ==10 && String.valueOf(s).matches("\\d+"))
+		if(s.length() ==10 && String.valueOf(s).matches("\\d+"))
 			return true;
 		return false;
 
@@ -66,7 +66,7 @@ abstract class User implements Serializable {
 		return false;
 	}
 	public static boolean isValidUsername(String s){
-		if(s.length() <= 32&& s.matches("^[a-zA-Z0-9]*$"))
+		if(s.length() <= 32&& s.matches("^[a-zA-Z0-9]*$")&&Global.isuniqeUsername(s))
 			return true;
 		return false;
 
