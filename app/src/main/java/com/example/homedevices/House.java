@@ -14,12 +14,12 @@ import java.util.Set;
 public class House implements Serializable {
 	private  String Streetname;
 	private String District;
-	private int Houseno;
+	private String Houseno;
 	private String label;
 	private ArrayList<Room> Listofrooms;
 	//Builder b;
 
-	House(String streetname, String district, int houseno, String label) {
+	House(String streetname, String district, String houseno, String label) {
 		Streetname = streetname;
 		District = district;
 		Houseno = houseno;

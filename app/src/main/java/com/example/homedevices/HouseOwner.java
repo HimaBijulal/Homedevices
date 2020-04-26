@@ -6,7 +6,7 @@ import java.util.Set;
 
 public class HouseOwner extends Resident {
 
-	HouseOwner(String name, int emiratesID, int phoneNumber, String emailAddress, String username, String password) {
+	HouseOwner(String name, String emiratesID, String phoneNumber, String emailAddress, String username, String password) {
 		super(name, emiratesID, phoneNumber, emailAddress, username, password);
 	}
 
