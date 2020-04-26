@@ -20,7 +20,7 @@ public class FileIO {
     public ArrayList<User> readFile() {
 
         try {
-            UserList=new ArrayList<>();
+            UserList=new ArrayList<User>();
             BufferedReader br= new BufferedReader (new FileReader("C:\\Users\\Abdul Ahad Khan\\AndroidStudioProjects\\Homedevices\\app\\src\\main\\java\\com\\example\\homedevices\\UserList.txt"));
             String line= null;
             String type, username, password;

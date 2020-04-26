@@ -81,7 +81,7 @@ public class Builder extends User {
 	}
 	public static boolean isUniqueLabel(Builder b, String s){
 	    for(House h:b.Listofhouses){
-	        if(h.getLabel()==s)
+	        if(h.getLabel().equals(s))
 	            return false;
         }
 	    return true;
