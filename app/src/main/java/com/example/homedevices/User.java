@@ -11,13 +11,13 @@ import java.io.Serializable;
 
 abstract class User implements Serializable {
 	private String Name;
-	private int EmiratesID;
-	private int PhoneNumber;
+	private String EmiratesID;
+	private String PhoneNumber;
 	private String EmailAddress;
 	private String Username;
 	private String Password;
 
-	User(String name, int emiratesID, int phoneNumber, String emailAddress, String username, String password) {
+	User(String name, String emiratesID, String phoneNumber, String emailAddress, String username, String password) {
 		Name = name;
 		EmiratesID = emiratesID;
 		PhoneNumber = phoneNumber;
@@ -34,10 +34,10 @@ abstract class User implements Serializable {
 	public String getPassword() {
 		return Password;
 	}
-	public int getEmiratesID() {
+	public String getEmiratesID() {
 		return EmiratesID;
 	}
-	public int getPhoneNumber() {
+	public String getPhoneNumber() {
 		return PhoneNumber;
 	}
 	public String getName() {
@@ -49,12 +49,12 @@ abstract class User implements Serializable {
 			return true;
 		return false;
 	}
-	public static boolean isValidID(int s){
+	public static boolean isValidID(String s){
 		if(String.valueOf(s).length() ==15 && String.valueOf(s).matches("\\d+")&&Global.isuniqeID(s))
 			return true;
 		return false;
 	}
-	public static boolean isValidPhoneNum(int s){
+	public static boolean isValidPhoneNum(String s){
 		if(String.valueOf(s).length() ==10 && String.valueOf(s).matches("\\d+"))
 			return true;
 		return false;

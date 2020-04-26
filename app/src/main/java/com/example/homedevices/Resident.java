@@ -8,7 +8,7 @@ public class Resident extends User {
 	private House House;
 	public ArrayList<Appliance> ApplianceList;
 
-	Resident(String name, int emiratesID, int phoneNumber, String emailAddress, String username, String password) {
+	Resident(String name, String emiratesID, String phoneNumber, String emailAddress, String username, String password) {
 		super(name, emiratesID, phoneNumber, emailAddress, username, password);
 	}
 

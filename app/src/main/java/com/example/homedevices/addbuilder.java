@@ -51,9 +51,9 @@ public class addbuilder extends AppCompatActivity implements View.OnClickListene
                 Builder b;
                 if(!User.isValidName(Name.getText().toString()))
                     System.out.println("NameError");
-                else if(!User.isValidID(Integer.parseInt(EmiratesID.getText().toString())))
+                else if(!User.isValidID(EmiratesID.getText().toString()))
                     System.out.println("IDError");
-                else if(!User.isValidPhoneNum(Integer.parseInt(PhoneNo.getText().toString())))
+                else if(!User.isValidPhoneNum(PhoneNo.getText().toString()))
                     System.out.println("PhoneNumError");
                 else if(!User.isValidEmail(EmailAddress.getText().toString()))
                     System.out.println("EmailError");
@@ -62,8 +62,8 @@ public class addbuilder extends AppCompatActivity implements View.OnClickListene
                 else if(!User.isValidPassword(Password.getText().toString()))
                     System.out.println("PasswordError");
                 else
-                    c.AddBuilder(new Builder(Name.getText().toString(), Integer.parseInt(EmiratesID.getText().toString()),
-                            Integer.parseInt(PhoneNo.getText().toString()), EmailAddress.getText().toString(),
+                    c.AddBuilder(new Builder(Name.getText().toString(), EmiratesID.getText().toString(),
+                            PhoneNo.getText().toString(), EmailAddress.getText().toString(),
                             Username.getText().toString(), Password.getText().toString()));
 
 
