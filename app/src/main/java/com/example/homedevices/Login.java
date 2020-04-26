@@ -2,6 +2,7 @@ package com.example.homedevices;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -23,26 +24,26 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        /*ArrayList <User> list= new ArrayList<>();
         if (flag == true){
-            FileIO file= new FileIO();
-            Global.UserList =file.readFile();
-/*            Admin u=new Admin("testOne",974,988,"testOne@test.com","admin","admin");
+
+            Admin u=new Admin("testOne",974,988,"testOne@test.com","admin","admin");
             Builder j=new Builder("Jack",435,9717,"jack@test.com","jtest","jpass");
             Builder n=new Builder("Norma",765,9716,"norma@test.com","ntest","npass");
             Builder m=new Builder("Mary",546,9715,"mary@test.com","mtest","mpass");
             j.Addhouse(new House("street1","dist 19",22,"House1"));
             j.Addhouse(new House("street2","dist 13",21,"House2"));
 
-            Global.UserList.add(j);
-            Global.UserList.add(u);
-            Global.UserList.add(n);
-            Global.UserList.add(m);*/
+            list.add(u);
+            list.add(j);
+            list.add(n);
+            list.add(m);
+            Global.UserList=list;
             flag = false;
-        }
-
+        }*/
         super.onCreate(savedInstanceState);
-        FileIO file=new FileIO ();
-        file.readFile();
+        FileIO file= new FileIO();
+        Global.UserList = file.readFile();
         setContentView(R.layout.activity_login);
         Username = (EditText) findViewById(R.id.etUsername);
         Password = (EditText) findViewById(R.id.etPassword);
