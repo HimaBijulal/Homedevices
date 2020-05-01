@@ -58,9 +58,40 @@ public class Builder extends User {
 
 		return null;
 	}
-	public void Addoutlet() {
+	public List<String> getOutletLabels(String HouseLabel,String roomLabel){
+		for(House house: Listofhouses){
+			if(house.getLabel().equals(HouseLabel))
+				for(Room room: house.getListofrooms())
+					if(room.getLabel().equals(roomLabel))
+						return room.getoutletLabels();
+
+		}
+
+		return null;
 	}
-	public void Removeoutlet() {
+
+	public boolean AddOutlet(String HouseLabel,String RoomLabel, String outletLabel) {
+		for(House house: Listofhouses){
+			if (house.getLabel().equals(HouseLabel))
+				return house.addoutlet(RoomLabel,outletLabel);
+
+		}
+		return false;
+	}
+	public void Removeoutlet(String HouseLabel,String RoomLabel, String outletLabel) {
+		for(House house: Listofhouses){
+			if (house.getLabel().equals(HouseLabel))
+				 house.delOutlet(RoomLabel,outletLabel);
+		}
+	}
+	public void addHouseOwner(String HouseLabel,HouseOwner o){
+		Global.UserList.add(o);
+		for(House house: Listofhouses){
+			if (house.getLabel().equals(HouseLabel)){
+				o.setHouse(house);
+			}
+
+		}
 	}
 	public void GenerateReport() {
 	}

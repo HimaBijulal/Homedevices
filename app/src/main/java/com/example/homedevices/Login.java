@@ -26,7 +26,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         if (flag == true){
             FileIO file= new FileIO();
             Global.UserList =file.readFile();
-          Admin u=new Admin("testOne","974","988","testOne@test.com","admin","admin");
+            Admin u=new Admin("testOne","974","988","testOne@test.com","admin","admin");
             Builder j=new Builder("Jack","435","9717","jack@test.com","jtest","jpass");
             Builder n=new Builder("Norma","765","9716","norma@test.com","ntest","npass");
             Builder m=new Builder("Mary","546","9715","mary@test.com","mtest","mpass");

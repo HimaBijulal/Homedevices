@@ -19,6 +19,10 @@ public class House implements Serializable {
 	private ArrayList<Room> Listofrooms;
 	//Builder b;
 
+	public ArrayList<Room> getListofrooms() {
+		return Listofrooms;
+	}
+
 	House(String streetname, String district, String houseno, String label) {
 		Streetname = streetname;
 		District = district;
@@ -50,6 +54,21 @@ public class House implements Serializable {
 		return arr;
 
 	}
+	public boolean addoutlet(String RoomLabel,String OutletLabel){
+		Room temp = getRoom(RoomLabel);
+		return temp.addOutlet(OutletLabel);
+
+
+	}
+
+	Room getRoom(String RoomLabel){
+		for(Room room: Listofrooms)
+			if(room.getLabel().equals(RoomLabel)) {
+				return room;
+			}
+		return null;
+	}
+
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     public static boolean isValidSName(String s){
@@ -77,4 +96,9 @@ public class House implements Serializable {
     }
 	public void GenerateReport() {}
 	public void GetPower() {}
+
+	public void delOutlet(String roomLabel, String outletLabel) {
+		Room temp = getRoom(roomLabel);
+		temp.delOutlet(outletLabel);
+	}
 }
