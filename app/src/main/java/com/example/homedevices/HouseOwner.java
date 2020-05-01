@@ -22,7 +22,7 @@ public class HouseOwner extends Resident {
 				if (((Resident) user).getHouse() == getHouse())
 					arr.add(user.getUsername());
 		}
-		return arr
+		return arr;
 
 
 	}

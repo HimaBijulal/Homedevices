@@ -21,6 +21,7 @@
         <activity android:name=".addResidant" />
         <activity android:name=".addHouseOwner" />
         <activity android:name=".changeOwnership" />
+        <activity android:name=".linkAppliance" />
         <activity android:name=".Login">
 
 

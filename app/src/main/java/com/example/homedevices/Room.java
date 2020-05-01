@@ -37,6 +37,15 @@ public class Room  implements Serializable{
 		return arr;
 
 	}
+	public List<String> getUnpluggedOutletLabels(){
+		List<String> arr= new ArrayList<String>();
+		for(int i=0;i<listofoutlets.size();i++){
+			if(!listofoutlets.get(i).isPlugged())
+				arr.add(listofoutlets.get(i).getLabel());
+		}
+		return arr;
+
+	}
 	public boolean addOutlet(String OutletLabel){
 		if(getOutlet(OutletLabel)==null){
 			listofoutlets.add(new Outlet(OutletLabel));
@@ -46,7 +55,7 @@ public class Room  implements Serializable{
 
 
 	}
-	private Outlet getOutlet(String Outletlabel){
+	public Outlet getOutlet(String Outletlabel){
 		if(listofoutlets==null)
 			return null;
 		for(Outlet outlet: listofoutlets)

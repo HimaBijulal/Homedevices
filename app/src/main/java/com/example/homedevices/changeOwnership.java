@@ -23,7 +23,7 @@ public class changeOwnership extends AppCompatActivity implements View.OnClickLi
     protected void onCreate(Bundle savedInstanceState) {
         b= (HouseOwner) getIntent().getSerializableExtra("User");
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_changeOwnership);
+        setContentView(R.layout.activity_changeownership);
         ResidentL = (Spinner) findViewById(R.id.spinner2);
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, b.getResidants());

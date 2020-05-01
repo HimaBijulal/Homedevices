@@ -26,7 +26,7 @@ public class addHouseOwner extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_addHouseOwner);
+        setContentView(R.layout.activity_addhouseowner);
         Name = (EditText) findViewById(R.id.edittext5);
         EmiratesID = (EditText) findViewById(R.id.editText);
         PhoneNo = (EditText) findViewById(R.id.editText2);

@@ -22,7 +22,7 @@ public class addAppliance extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         r= (Resident) getIntent().getSerializableExtra("User");
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_addappliance;
+        setContentView(R.layout.activity_addappliance);
         ApplianceL = (EditText) findViewById(R.id.ApplianceLabel);
 
         Add = findViewById(R.id.AddAppliance);
@@ -37,16 +37,18 @@ public class addAppliance extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
 
         switch (v.getId()) {
-            case R.id.AddHouseR: {
-                b.Addroom(String.valueOf(HouseL.getSelectedItem()),RoomL.getText().toString());
+            case R.id.AddAppliance: {
+                boolean success = r.addAppliance(ApplianceL.getText().toString());
+                if(!success)
+                    System.out.println("appliance name not unique ");
                 //Add builder object to list of builders
-                Intent intent = new Intent(this, Dashboard.class).putExtra("User",b);
+                Intent intent = new Intent(this, Dashboard.class).putExtra("User",r);
                 startActivity(intent);
                 break;
                 // }
             }
-            case R.id.CancelRoomR: {
-                Intent intent = new Intent(this, Dashboard.class).putExtra("User",b);
+            case R.id.Cancel: {
+                Intent intent = new Intent(this, Dashboard.class).putExtra("User",r);
                 startActivity(intent);
             }
         }
@@ -54,4 +56,4 @@ public class addAppliance extends AppCompatActivity implements View.OnClickListe
 
 
 
-}}
+}

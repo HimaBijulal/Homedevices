@@ -39,6 +39,7 @@ public class House implements Serializable {
 		Listofrooms.add(new Room(name));
 	}
 
+
 	void delRoom(String label){
 		for (Room room: Listofrooms)
 			if(room.getLabel().equals(label)) {
