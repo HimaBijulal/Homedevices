@@ -44,7 +44,7 @@ public class addhouse extends AppCompatActivity implements View.OnClickListener 
                     System.out.println("HouseNoError");
                 else if(!House.isValidHLabel(b,Label.getText().toString()))
                     System.out.println("HouseLabelError");
-                b.Addhouse(new House(StreetName.getText().toString(),District.getText().toString(),Integer.parseInt(HouseNo.getText().toString()),Label.getText().toString()));
+                b.Addhouse(new House(StreetName.getText().toString(),District.getText().toString(),HouseNo.getText().toString(),Label.getText().toString()));
                 //Add builder object to list of builders
                 Intent intent = new Intent(this, Dashboard.class).putExtra("User",b);;
                 startActivity(intent);

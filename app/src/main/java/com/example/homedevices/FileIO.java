@@ -10,7 +10,7 @@ public class FileIO {
     private ArrayList <User> UserList;
     public void openFile() {
         try {
-            BufferedReader br= new BufferedReader (new FileReader("C:\\Users\\Abdul Ahad Khan\\AndroidStudioProjects\\Homedevices\\app\\src\\main\\java\\com\\example\\homedevices\\UserList.txt"));
+            BufferedReader br= new BufferedReader (new FileReader("/storage/emulated/0/Download/UserList.txt"));
         } catch (FileNotFoundException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -21,18 +21,18 @@ public class FileIO {
 
         try {
             UserList=new ArrayList<>();
-            BufferedReader br= new BufferedReader (new FileReader("C:\\Users\\Abdul Ahad Khan\\AndroidStudioProjects\\Homedevices\\app\\src\\main\\java\\com\\example\\homedevices\\UserList.txt"));
+            BufferedReader br= new BufferedReader (new FileReader("/storage/emulated/0/Download/UserList.txt"));
             String line= null;
             String type, username, password;
             String name, email;
-            int phone, emirates, id;
+            String phone, emirates, id;
             while((line=br.readLine()) != null) {
 
                 String barrier[]=line.split("\t");
                 type=barrier[0];
                 name=barrier[1];
-                emirates=Integer.parseInt(barrier[2]);
-                phone=Integer.parseInt(barrier[3]);
+                emirates=barrier[2];
+                phone=barrier[3];
                 email=barrier[4];
                 username=barrier[5];
                 password=barrier[6];
@@ -63,11 +63,11 @@ public class FileIO {
         }
 
         try {
-            BufferedReader br= new BufferedReader (new FileReader("C:\\Users\\Abdul Ahad Khan\\AndroidStudioProjects\\Homedevices\\app\\src\\main\\java\\com\\example\\homedevices\\HouseList.txt"));
+            BufferedReader br= new BufferedReader (new FileReader("/storage/emulated/0/Download/HouseList.txt"));
 
             String Busername, Husername, Rusername, line;
             String street, district, label;
-            int houseno, i=0;
+            String houseno;
             while((line=br.readLine()) != null)
             {
                 String barrier[]=line.split("\t");
@@ -76,7 +76,7 @@ public class FileIO {
                 Rusername= barrier[2];
                 street= barrier[3];
                 district= barrier[4];
-                houseno=Integer.parseInt(barrier[5]);
+                houseno=barrier[5];
                 label=barrier[6];
                 House h=new House(street, district, houseno, label);
                 String resident[]=Rusername.split(",");
@@ -104,7 +104,7 @@ public class FileIO {
         }
 
         try {
-            BufferedReader br= new BufferedReader (new FileReader("C:\\Users\\Abdul Ahad Khan\\AndroidStudioProjects\\Homedevices\\app\\src\\main\\java\\com\\example\\homedevices\\RoomList.txt"));
+            BufferedReader br= new BufferedReader (new FileReader("/storage/emulated/0/Download/RoomList.txt"));
 
             String Busername, line;
             String label, roomlabel;

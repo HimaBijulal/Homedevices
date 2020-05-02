@@ -11,13 +11,13 @@ import java.io.Serializable;
 
 abstract class User implements Serializable {
 	private String Name;
-	private int EmiratesID;
-	private int PhoneNumber;
+	private String EmiratesID;
+	private String PhoneNumber;
 	private String EmailAddress;
 	private String Username;
 	private String Password;
 
-	User(String name, int emiratesID, int phoneNumber, String emailAddress, String username, String password) {
+	User(String name, String emiratesID, String phoneNumber, String emailAddress, String username, String password) {
 		Name = name;
 		EmiratesID = emiratesID;
 		PhoneNumber = phoneNumber;
@@ -34,10 +34,10 @@ abstract class User implements Serializable {
 	public String getPassword() {
 		return Password;
 	}
-	public int getEmiratesID() {
+	public String getEmiratesID() {
 		return EmiratesID;
 	}
-	public int getPhoneNumber() {
+	public String getPhoneNumber() {
 		return PhoneNumber;
 	}
 	public String getName() {
@@ -45,28 +45,28 @@ abstract class User implements Serializable {
 	}
 	@RequiresApi(api = Build.VERSION_CODES.N)
 	public static boolean isValidName(String s){
-		if(s.length() <= 32 && s.chars().allMatch(Character::isLetter))
+		if(s.length() <= 32 && s.matches("^[ A-Za-z]+$"))
 			return true;
 		return false;
 	}
-	public static boolean isValidID(int s){
-		if(String.valueOf(s).length() ==15 && String.valueOf(s).matches("\\d+")&&Global.isuniqeID(s))
+	public static boolean isValidID(String s){
+		if(s.length() ==15 && s.matches("\\d+")&&Global.isuniqeID(s))
 			return true;
 		return false;
 	}
-	public static boolean isValidPhoneNum(int s){
-		if(String.valueOf(s).length() ==10 && String.valueOf(s).matches("\\d+"))
+	public static boolean isValidPhoneNum(String s){
+		if(s.length() ==10 && String.valueOf(s).matches("\\d+"))
 			return true;
 		return false;
 
 	}
 	public static boolean isValidEmail(String s){
-		if(s.contains("@")&&s.contains(".com"))
+		if(s.contains("@")&&s.contains("."))
 			return true;
 		return false;
 	}
 	public static boolean isValidUsername(String s){
-		if(s.length() <= 32&& s.matches("^[a-zA-Z0-9]*$") && String.valueOf(s).matches("\\d+")&&Global.isuniqeUsername(s) )
+		if(s.length() <= 32&& s.matches("^[a-zA-Z0-9]*$")&&Global.isuniqeUsername(s))
 			return true;
 		return false;
 

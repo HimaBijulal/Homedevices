@@ -1,6 +1,5 @@
 
 package com.example.homedevices;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,7 +9,7 @@ public class Builder extends User {
 	private ArrayList <House> Listofhouses;
 
 
-	Builder(String name,  int emiratesID, int phoneNumber, String emailAddress, String username, String password) {
+	Builder(String name, String emiratesID, String phoneNumber, String emailAddress, String username, String password) {
 		super(name, emiratesID, phoneNumber, emailAddress, username, password);
 		Listofhouses = new ArrayList<House>();
 	}
@@ -59,9 +58,40 @@ public class Builder extends User {
 
 		return null;
 	}
-	public void Addoutlet() {
+	public List<String> getOutletLabels(String HouseLabel,String roomLabel){
+		for(House house: Listofhouses){
+			if(house.getLabel().equals(HouseLabel))
+				for(Room room: house.getListofrooms())
+					if(room.getLabel().equals(roomLabel))
+						return room.getoutletLabels();
+
+		}
+
+		return null;
 	}
-	public void Removeoutlet() {
+
+	public boolean AddOutlet(String HouseLabel,String RoomLabel, String outletLabel) {
+		for(House house: Listofhouses){
+			if (house.getLabel().equals(HouseLabel))
+				return house.addoutlet(RoomLabel,outletLabel);
+
+		}
+		return false;
+	}
+	public void Removeoutlet(String HouseLabel,String RoomLabel, String outletLabel) {
+		for(House house: Listofhouses){
+			if (house.getLabel().equals(HouseLabel))
+				 house.delOutlet(RoomLabel,outletLabel);
+		}
+	}
+	public void addHouseOwner(String HouseLabel,HouseOwner o){
+		Global.UserList.add(o);
+		for(House house: Listofhouses){
+			if (house.getLabel().equals(HouseLabel)){
+				o.setHouse(house);
+			}
+
+		}
 	}
 	public void GenerateReport() {
 	}
@@ -81,7 +111,7 @@ public class Builder extends User {
 	}
 	public static boolean isUniqueLabel(Builder b, String s){
 	    for(House h:b.Listofhouses){
-	        if(h.getLabel()==s)
+	        if(h.getLabel().equals(s))
 	            return false;
         }
 	    return true;

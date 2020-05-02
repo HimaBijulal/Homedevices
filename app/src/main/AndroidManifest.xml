@@ -16,7 +16,15 @@
         <activity android:name=".addbuilder" />
         <activity android:name=".Dashboard" />
         <activity android:name=".SuccessLogin" />
+        <activity android:name=".addoutlet" />
+        <activity android:name=".deloutlet" />
+        <activity android:name=".addResidant" />
+        <activity android:name=".addHouseOwner" />
+        <activity android:name=".changeOwnership" />
+        <activity android:name=".linkAppliance" />
         <activity android:name=".Login">
+
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

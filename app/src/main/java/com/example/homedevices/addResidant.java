@@ -1,28 +1,27 @@
 package com.example.homedevices;
 
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.text.SpannableStringBuilder;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.io.Serializable;
 
-public class addbuilder extends AppCompatActivity implements View.OnClickListener, Serializable {
+public class addResidant extends AppCompatActivity implements View.OnClickListener, Serializable {
 
     private EditText Name, EmiratesID, PhoneNo, Username, Password,EmailAddress;
     private Button Add, Cancel;
-    private Admin c;
+    private HouseOwner c;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_addbuilder);
+        setContentView(R.layout.activity_addresidant);
         Name = (EditText) findViewById(R.id.edittext5);
         EmiratesID = (EditText) findViewById(R.id.editText);
         PhoneNo = (EditText) findViewById(R.id.editText2);
@@ -33,7 +32,7 @@ public class addbuilder extends AppCompatActivity implements View.OnClickListene
         EmailAddress=findViewById(R.id.emailbuild);
         Add.setOnClickListener(this);
         Cancel.setOnClickListener(this);
-        c= (Admin) getIntent().getSerializableExtra("User");
+        c= (HouseOwner) getIntent().getSerializableExtra("User");
 
 
 
@@ -62,12 +61,12 @@ public class addbuilder extends AppCompatActivity implements View.OnClickListene
                 else if(!User.isValidPassword(Password.getText().toString()))
                     System.out.println("PasswordError");
                 else
-                    c.AddBuilder(new Builder(Name.getText().toString(), EmiratesID.getText().toString(),
+                    c.addResidant(new Resident(Name.getText().toString(), EmiratesID.getText().toString(),
                             PhoneNo.getText().toString(), EmailAddress.getText().toString(),
                             Username.getText().toString(), Password.getText().toString()));
 
 
-                //Add builder object to list of builders
+
                 Intent intent = new Intent(this, Dashboard.class).putExtra("User",c);;
                 startActivity(intent);
                 break;
