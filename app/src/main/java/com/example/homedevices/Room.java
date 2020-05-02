@@ -27,7 +27,7 @@ public class Room  implements Serializable{
 	}
 
 	public void GenerateReport() {
-
+		//print from the funtion getPower in this class
 	}
 	public List<String> getoutletLabels(){
 		List<String> arr= new ArrayList<String>();
@@ -66,7 +66,13 @@ public class Room  implements Serializable{
 
 	}
 
-	public void GetPower() {
+	public double GetPower() {
+		double power=0.0;
+		for (Outlet o:listofoutlets){
+			power+=o.CurrentUsage();
+		}
+		return power;
+
 	}
 
 	public void delOutlet(String outletLabel) {

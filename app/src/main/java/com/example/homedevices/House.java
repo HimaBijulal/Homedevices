@@ -22,6 +22,9 @@ public class House implements Serializable {
 	public ArrayList<Room> getListofrooms() {
 		return Listofrooms;
 	}
+	private float powerConsumed=0;
+	private boolean occupied=false;
+
 
 	House(String streetname, String district, String houseno, String label) {
 		Streetname = streetname;
@@ -38,7 +41,6 @@ public class House implements Serializable {
 	void addRoom(String name){
 		Listofrooms.add(new Room(name));
 	}
-
 
 	void delRoom(String label){
 		for (Room room: Listofrooms)
@@ -58,7 +60,6 @@ public class House implements Serializable {
 	public boolean addoutlet(String RoomLabel,String OutletLabel){
 		Room temp = getRoom(RoomLabel);
 		return temp.addOutlet(OutletLabel);
-
 
 	}
 
@@ -96,10 +97,22 @@ public class House implements Serializable {
         return false;
     }
 	public void GenerateReport() {}
-	public void GetPower() {}
+	public float getPower() {
+		return powerConsumed;
+	}
 
 	public void delOutlet(String roomLabel, String outletLabel) {
 		Room temp = getRoom(roomLabel);
 		temp.delOutlet(outletLabel);
+	}
+	public boolean isOccupied(House h){
+		return occupied;
+	}
+	public double CurrentUsage() {
+		double power = 0.0;
+		for (Room r:getListofrooms()){
+			power+=r.GetPower();
+		}
+		return power;
 	}
 }
