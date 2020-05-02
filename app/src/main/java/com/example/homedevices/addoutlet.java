@@ -42,7 +42,6 @@ public class addoutlet extends AppCompatActivity implements View.OnClickListener
         Cancel.setOnClickListener(this);
         add.setOnClickListener(this);
         d=this;
-
     }
 
     @Override

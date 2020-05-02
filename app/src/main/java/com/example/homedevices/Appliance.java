@@ -5,10 +5,16 @@ package com.example.homedevices;
 
 class Appliance extends Device {
 	private String label;
-
 	public String getLabel() {
 		return label;
 	}
+
+	public double getPower() {
+		return power;
+	}
+
+	private double power=5.0;
+	private double timePlugged=0.0;
 
 	private Outlet ispluggedinto;
 
@@ -19,11 +25,17 @@ class Appliance extends Device {
 
 	public Appliance(String label) {
 		this.label = label;
-
 	}
 
-	public void pluginto(Outlet o){
+	public void pluginto(Outlet o) throws InterruptedException {
 		ispluggedinto =o;
+
+		Thread t=new Thread();
+		while (true){
+			timePlugged+=1;
+			t.sleep(1000);
+		}
+
 }
 
 	public void unplug(){
@@ -35,5 +47,8 @@ class Appliance extends Device {
 			return false;
 		return true;
 
+	}
+	public double getTimePlugged(){
+		return timePlugged;
 	}
 }
