@@ -65,7 +65,7 @@ public class linkAppliance extends AppCompatActivity implements View.OnClickList
                 startActivity(intent);
                 break;
             }
-            case R.id.CancelRoomR: {
+            case R.id.Cancel: {
                 Intent intent = new Intent(this, Dashboard.class).putExtra("User",r);
                 startActivity(intent);
             }

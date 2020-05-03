@@ -81,7 +81,7 @@ public class FileIO {
             String houseno;
             while((line=br.readLine()) != null)
             {
-                String barrier[]=line.split("\t");
+                String barrier[]=line.split("\\s+");
                 Busername= barrier[0];
                 Husername= barrier[1];
                 Rusername= barrier[2];
@@ -140,38 +140,85 @@ public class FileIO {
             System.out.println("error in initializing roomlist");
         }
 
-
-        /*try {
-            BufferedReader br= new BufferedReader (new FileReader("BuilderList.txt"));
-
-            String line;
-            String name, email, Busername, password;
-            int emirates, phone;
+        try {
+            InputStream is = context.getAssets().open("ApplianceList.txt");
+            BufferedReader br= new BufferedReader(new InputStreamReader(is));
+            String Rusername, line;
+            double timeplugged;
+            String appliancelabel;
+            double power;
             while((line=br.readLine()) != null)
             {
-                String barrier[]=line.split("\t");
-                name= barrier[0];
-                emirates=Integer.parseInt(barrier[1]);
-                phone=Integer.parseInt(barrier[2]);
-                email=barrier[3];
-                Busername=barrier[4];
-                password=barrier[5];
+                String barrier[]=line.split("\\s+");
+                Rusername= barrier[0];
+                appliancelabel=barrier[1];
+                power=Double.parseDouble(barrier[2]);
+                timeplugged=Double.parseDouble(barrier[3]);
+
+
                 for(User u: UserList)
                 {
-                    if(u instanceof Admin)
-                        ((Admin) u).AddBuilder(new Builder(name,emirates,phone, email, Busername, password));
+                    if(u.getUsername().equals(Rusername)){
+                        ((Resident) u).addAppliance(appliancelabel);
+                        ((Resident) u).setAppliance(appliancelabel,power,timeplugged);}
+
                 }
             }
 
         }catch (IOException e) {
             e.printStackTrace();
-            System.out.println("error in initializing Builderlist");
-        }*/
+            System.out.println("error in initializing Appliancelist");
+        }
+
+
+        try {
+            InputStream is = context.getAssets().open("OutletList.txt");
+            BufferedReader br= new BufferedReader(new InputStreamReader(is));
+            String Busername, line;
+            String label, roomlabel;
+            String outletlabel, appliancelabel;
+            String Rusername;
+            double power;
+            while((line=br.readLine()) != null)
+            {
+                String barrier[]=line.split("\\s+");
+                Busername= barrier[0];
+                label=barrier[1];
+                roomlabel=barrier[2];
+                outletlabel=barrier[3];
+                Rusername=barrier[4];
+                appliancelabel=barrier[5];
+                power=Double.parseDouble(barrier[6]);
+
+                for(User u: UserList)
+                {
+                    if(u.getUsername().equals(Busername)) {
+                        ((Builder) u).AddOutlet(label, roomlabel, outletlabel);
+                        Outlet o = ((Builder) u).getOutlet(label, roomlabel, outletlabel);
+                        for (User i : UserList) {
+                            if (i.getUsername().equals(Rusername)) {
+                                o.plugAppliance(((Resident) i).getAppliance(appliancelabel));
+                                ((Resident) i).getAppliance(appliancelabel).pluginto(o);
+                                o.setPower(power);
+                            }
+                        }
+
+                    }
+
+                }
+            }
+
+        }catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+            System.out.println("error in initializing outletlist");
+        }
+
 
 
 
         return UserList;
     }
+
     void addBuilder(String name, int emiratesID, int phoneNumber, String emailAddress){
         //UserList.add(new Builder(name,emiratesID,phoneNumber,emailAddress));
     }

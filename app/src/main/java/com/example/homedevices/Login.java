@@ -29,17 +29,17 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             //Context context= getApplicationContext();
             FileIO file= new FileIO(this);
             Global.UserList =file.readFile();
-            Admin u=new Admin("testOne","974","988","testOne@test.com","admin","admin");
-            Builder j=new Builder("Jack","435","9717","jack@test.com","jtest","jpass");
-            Builder n=new Builder("Norma","765","9716","norma@test.com","ntest","npass");
-            Builder m=new Builder("Mary","546","9715","mary@test.com","mtest","mpass");
-            j.Addhouse(new House("street1","dist 19","22","House1"));
-            j.Addhouse(new House("street2","dist 13","21","House2"));
+           // Admin u=new Admin("testOne","974","988","testOne@test.com","admin","admin");
+           // Builder j=new Builder("Jack","435","9717","jack@test.com","jtest","jpass");
+           // Builder n=new Builder("Norma","765","9716","norma@test.com","ntest","npass");
+            //Builder m=new Builder("Mary","546","9715","mary@test.com","mtest","mpass");
+            //j.Addhouse(new House("street1","dist 19","22","House1"));
+           // j.Addhouse(new House("street2","dist 13","21","House2"));
 
-            Global.UserList.add(j);
-            Global.UserList.add(u);
-            Global.UserList.add(n);
-            Global.UserList.add(m);
+           // Global.UserList.add(j);
+           // Global.UserList.add(u);
+          //  Global.UserList.add(n);
+          //  Global.UserList.add(m);
             flag = false;
         }
 

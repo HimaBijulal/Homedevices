@@ -3,7 +3,7 @@ package com.example.homedevices;
 
 		import java.math.BigInteger;
 
-class Appliance extends Device {
+class Appliance extends Device   {
 	private String label;
 	public String getLabel() {
 		return label;
@@ -11,6 +11,14 @@ class Appliance extends Device {
 
 	public double getPower() {
 		return power;
+	}
+
+	public void setPower(double power) {
+		this.power = power;
+	}
+
+	public void setTimePlugged(double timePlugged) {
+		this.timePlugged = timePlugged;
 	}
 
 	private double power=5.0;
@@ -29,14 +37,16 @@ class Appliance extends Device {
 
 	public void pluginto(Outlet o) throws InterruptedException {
 		ispluggedinto =o;
+		(new Thread(new thread(this))).start();
 
-		Thread t=new Thread();
-		while (true){
-			timePlugged+=1;
-			t.sleep(1000);
-		}
+
 
 }
+
+	public void incCounter(){
+		timePlugged++;
+	}
+
 
 	public void unplug(){
 		ispluggedinto = null;

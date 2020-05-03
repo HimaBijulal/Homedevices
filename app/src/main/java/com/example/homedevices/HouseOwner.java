@@ -17,6 +17,7 @@ public class HouseOwner extends Resident {
 	}
 	public List<String> getResidants(){
 		List<String> arr= new ArrayList<String>();
+		if(Global.UserList==null) return arr;
 		for(User user: Global.UserList) {
 			if (user instanceof Resident && !(user instanceof HouseOwner))
 				if (((Resident) user).getHouse() == getHouse())

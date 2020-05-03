@@ -33,6 +33,7 @@ import android.widget.Toast;
         outletID = (Spinner)findViewById(R.id.outletspinner);
         generate= (Button) findViewById(R.id.Generate);
         cancel =(Button)findViewById(R.id.cancelPower);
+        power = (TextView)findViewById(R.id.Powerconsumption2);
         //------------------------------------------------------------------------------
         ArrayAdapter<String> dataAdapter1 = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, b.getHouseLabel());
@@ -64,8 +65,8 @@ import android.widget.Toast;
                     double usage=b.GenerateReport(String.valueOf(RoomID.getSelectedItem()),String.valueOf(outletID.getSelectedItem()));
                     //Add builder object to list of builders
                     power.setText(Double.toString(usage) +" KWh");
-                    Intent intent = new Intent(this, Dashboard.class).putExtra("User",b);
-                    startActivity(intent);
+                    //Intent intent = new Intent(this, Dashboard.class).putExtra("User",b);
+                    //startActivity(intent);
                     break;
                     // }
                 }

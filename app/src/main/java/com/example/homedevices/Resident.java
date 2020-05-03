@@ -1,10 +1,11 @@
 package com.example.homedevices;
 
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Resident extends User {
+public class Resident extends User implements Serializable {
 
 	private House House;
 
@@ -48,6 +49,23 @@ public class Resident extends User {
 		return r.getpluggedOutletLabels();
 
 
+	}
+	public Appliance getAppliance(String label)
+	{
+		for( Appliance appliance : ApplianceList)
+		{
+			if(appliance.getLabel().equals(label))
+				return appliance;
+		}
+		return null;
+	}
+	public void setAppliance(String label, double p, double time )
+	{
+		for(int i=0;i<ApplianceList.size();i++){
+			if(ApplianceList.get(i).getLabel().equals(label))
+				ApplianceList.get(i).setPower(p);
+				ApplianceList.get(i).setTimePlugged(time);
+		}
 	}
 	public void linkAppliance(String RoomID,String OutletID,String ApplianceID) throws InterruptedException {
 		Room r = House.getRoom(RoomID);

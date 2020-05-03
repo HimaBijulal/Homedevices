@@ -34,6 +34,19 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <Button
+        android:id="@+id/appliance_button"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="315dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="84dp"
+        android:background="@drawable/bgbuttonaddbuilder"
+        android:text="Add Appliance"
+        android:textColor="#FFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <Button
         android:id="@+id/etLogOffButton"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="153dp"
@@ -47,6 +60,7 @@
         app:layout_constraintTop_toBottomOf="parent"
         app:layout_constraintVertical_bias="0.135" />
 
+
     <Button
         android:id="@+id/delhouse_button"
         style="@style/Widget.AppCompat.Button.Borderless"
@@ -55,6 +69,18 @@
         android:layout_marginTop="148dp"
         android:background="@drawable/bgbuttonaddbuilder"
         android:text="Delete House"
+        android:textColor="#FFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+    <Button
+        android:id="@+id/linkappliance"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="315dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="148dp"
+        android:background="@drawable/bgbuttonaddbuilder"
+        android:text="Link Appliance"
         android:textColor="#FFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -68,6 +94,19 @@
         android:layout_marginTop="216dp"
         android:background="@drawable/bgbuttonaddbuilder"
         android:text="Add Room"
+        android:textColor="#FFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <Button
+        android:id="@+id/ownership"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="315dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="216dp"
+        android:background="@drawable/bgbuttonaddbuilder"
+        android:text="Change Ownership"
         android:textColor="#FFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

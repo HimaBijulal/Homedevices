@@ -20,6 +20,7 @@
         <activity android:name=".addoutlet" />
         <activity android:name=".deloutlet" />
         <activity android:name=".addResidant" />
+        <activity android:name=".addAppliance" />
         <activity android:name=".addHouseOwner" />
         <activity android:name=".changeOwnership" />
         <activity android:name=".linkAppliance" />

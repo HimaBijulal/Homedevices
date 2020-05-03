@@ -1,15 +1,15 @@
 package com.example.homedevices;
 
-import androidx.appcompat.app.AppCompatActivity;
+        import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
+        import android.content.Intent;
+        import android.os.Bundle;
+        import android.view.View;
+        import android.widget.Button;
 
 public class Dashboard extends AppCompatActivity implements View.OnClickListener {
 
-    private Button add_builder,add_house,del_house,add_room,del_room,Logoff,add_outlet,del_outlet,view_report;
+    private Button add_builder,add_house,del_house,add_room,del_room,Logoff,add_outlet,del_outlet,view_report,add_appliance,link_appliance,changeowner;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         User c= (User) getIntent().getSerializableExtra("User");
@@ -24,6 +24,9 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
         add_outlet = findViewById(R.id.addoutlet_button);
         del_outlet = findViewById(R.id.deloutlet_button);
         view_report=findViewById(R.id.ViewReport);
+        add_appliance=findViewById(R.id.appliance_button);
+        link_appliance=findViewById(R.id.linkappliance);
+        changeowner=findViewById(R.id.ownership);
         Logoff.setOnClickListener(this);
 
         if(c instanceof Admin){
@@ -34,8 +37,10 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
             del_room.setVisibility(View.GONE);
             add_outlet.setVisibility(View.GONE);
             del_outlet.setVisibility(View.GONE);
-
-
+            view_report.setVisibility(View.GONE);
+            link_appliance.setVisibility(View.GONE);
+            add_appliance.setVisibility(View.GONE);
+            changeowner.setVisibility(View.GONE);
         }
         else if(c instanceof Builder){
             add_house.setOnClickListener(this);
@@ -45,6 +50,10 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
             add_outlet.setOnClickListener(this);
             del_outlet.setOnClickListener(this);
             add_builder.setVisibility(View.GONE);
+            view_report.setVisibility(View.GONE);
+            link_appliance.setVisibility(View.GONE);
+            add_appliance.setVisibility(View.GONE);
+            changeowner.setVisibility(View.GONE);
         }
         else if (!( c instanceof HouseOwner) && (c instanceof Resident)) {
             add_builder.setVisibility(View.GONE);
@@ -55,6 +64,22 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
             add_outlet.setVisibility(View.GONE);
             del_outlet.setVisibility(View.GONE);
             view_report.setOnClickListener(this);
+            link_appliance.setOnClickListener(this);
+            add_appliance.setOnClickListener(this);
+            changeowner.setVisibility(View.GONE);
+        }
+        else {
+            add_builder.setVisibility(View.GONE);
+            add_house.setVisibility(View.GONE);
+            del_house.setVisibility(View.GONE);
+            add_room.setVisibility(View.GONE);
+            del_room.setVisibility(View.GONE);
+            add_outlet.setVisibility(View.GONE);
+            del_outlet.setVisibility(View.GONE);
+            view_report.setOnClickListener(this);
+            link_appliance.setOnClickListener(this);
+            add_appliance.setOnClickListener(this);
+            changeowner.setOnClickListener(this);
         }
 
 
@@ -111,6 +136,22 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
                 startActivity(intent);
                 break;
             }
+            case R.id.appliance_button:{
+                Intent intent = new Intent(this, addAppliance.class).putExtra("User",c);
+                startActivity(intent);
+                break;
+            }
+            case R.id.linkappliance:{
+                Intent intent = new Intent(this, linkAppliance.class).putExtra("User",c);
+                startActivity(intent);
+                break;
+            }
+            case R.id.ownership:{
+                Intent intent = new Intent(this, changeOwnership.class).putExtra("User",c);
+                startActivity(intent);
+                break;
+            }
+
         }
     }
 }

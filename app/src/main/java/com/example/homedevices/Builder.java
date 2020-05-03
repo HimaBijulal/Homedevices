@@ -47,7 +47,6 @@ public class Builder extends User {
 			arr.add(Listofhouses.get(i).getLabel());
 		}
 		return arr;
-
 	}
 	public List<String> getRoomLabels(String HouseLabel){
 		for(House house: Listofhouses){
@@ -58,6 +57,7 @@ public class Builder extends User {
 
 		return null;
 	}
+
 	public List<String> getOutletLabels(String HouseLabel,String roomLabel){
 		for(House house: Listofhouses){
 			if(house.getLabel().equals(HouseLabel))
@@ -78,6 +78,18 @@ public class Builder extends User {
 		}
 		return false;
 	}
+	public Outlet getOutlet(String HouseLabel, String RoomLabel, String outletLabel) {
+		for (House house : Listofhouses)
+			if (house.getLabel().equals(HouseLabel))
+				for (Room room : house.getListofrooms())
+					if (room.getLabel().equals(RoomLabel))
+						for (Outlet outlet : room.getListofoutlets())
+							if (outlet.getLabel().equals(outletLabel))
+								return outlet;
+
+		return null;
+	}
+
 	public void Removeoutlet(String HouseLabel,String RoomLabel, String outletLabel) {
 		for(House house: Listofhouses){
 			if (house.getLabel().equals(HouseLabel))
