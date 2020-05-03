@@ -1,6 +1,9 @@
 package com.example.homedevices;
 
 
+import android.content.Context;
+import android.content.res.AssetManager;
+
 import java.util.ArrayList;
 import java.util.Set;
 import java.io.*;
@@ -8,9 +11,14 @@ import java.util.*;
 
 public class FileIO {
     private ArrayList <User> UserList;
+    private Context context;
+    public FileIO(Context c){
+        context=c;
+    }
     public void openFile() {
         try {
-            BufferedReader br= new BufferedReader (new FileReader("/storage/emulated/0/Download/UserList.txt"));
+
+            BufferedReader br= new BufferedReader (new FileReader("UserList.txt"));
         } catch (FileNotFoundException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -21,7 +29,10 @@ public class FileIO {
 
         try {
             UserList=new ArrayList<>();
-            BufferedReader br= new BufferedReader (new FileReader("/storage/emulated/0/Download/UserList.txt"));
+
+           // BufferedReader br= new BufferedReader (new FileReader("UserList.txt"));
+            InputStream is = context.getAssets().open("UserList.txt");
+            BufferedReader br= new BufferedReader(new InputStreamReader(is));
             String line= null;
             String type, username, password;
             String name, email;
@@ -63,8 +74,8 @@ public class FileIO {
         }
 
         try {
-            BufferedReader br= new BufferedReader (new FileReader("/storage/emulated/0/Download/HouseList.txt"));
-
+            InputStream is = context.getAssets().open("HouseList.txt");
+            BufferedReader br= new BufferedReader(new InputStreamReader(is));
             String Busername, Husername, Rusername, line;
             String street, district, label;
             String houseno;
@@ -104,8 +115,8 @@ public class FileIO {
         }
 
         try {
-            BufferedReader br= new BufferedReader (new FileReader("/storage/emulated/0/Download/RoomList.txt"));
-
+            InputStream is = context.getAssets().open("RoomList.txt");
+            BufferedReader br= new BufferedReader(new InputStreamReader(is));
             String Busername, line;
             String label, roomlabel;
             int houseno, i=0;

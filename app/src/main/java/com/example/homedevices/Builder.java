@@ -93,14 +93,19 @@ public class Builder extends User {
 
 		}
 	}
-	public void GenerateReport() {
-	}
+	//public void GenerateReport() {
+	//}
 	public void Addresident() {
 	}
 	public void Generatereport() {
-		// begin-user-code
-		// TODO Auto-generated method stub
-		// end-user-code
+		ArrayList powerC=new ArrayList<Character>();
+		for (House house:Listofhouses){
+			if (house.isOccupied(house)) {
+				powerC.add(house.getLabel());
+				powerC.add(house.getPower());
+			}
+		}
+
 	}
 
 	public Object GetPower() {

@@ -36,7 +36,7 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
 
 
         }
-        else{
+        else/*(c instanceof Builder)*/{
             add_house.setOnClickListener(this);
             del_house.setOnClickListener(this);
             add_room.setOnClickListener(this);
@@ -45,6 +45,8 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
             del_outlet.setOnClickListener(this);
             add_builder.setVisibility(View.GONE);
         }
+        //else(c instanceof HouseOwner){
+        //}
 
 
 

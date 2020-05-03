@@ -2,6 +2,8 @@ package com.example.homedevices;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Application;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -24,7 +26,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         if (flag == true){
-            FileIO file= new FileIO();
+            //Context context= getApplicationContext();
+            FileIO file= new FileIO(this);
             Global.UserList =file.readFile();
             Admin u=new Admin("testOne","974","988","testOne@test.com","admin","admin");
             Builder j=new Builder("Jack","435","9717","jack@test.com","jtest","jpass");
@@ -41,8 +44,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         }
 
         super.onCreate(savedInstanceState);
-        FileIO file=new FileIO ();
-        file.readFile();
+        //FileIO file=new FileIO ();
+        //file.readFile();
         setContentView(R.layout.activity_login);
         Username = (EditText) findViewById(R.id.etUsername);
         Password = (EditText) findViewById(R.id.etPassword);
