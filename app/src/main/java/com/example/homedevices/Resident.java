@@ -40,7 +40,14 @@ public class Resident extends User {
 
 
 	}
-	public void linkAppliance(String RoomID,String OutletID,String ApplianceID){
+	public List<String> getPluggedOutletLabels(String Room){
+
+		Room r =House.getRoom(Room);
+		return r.getpluggedOutletLabels();
+
+
+	}
+	public void linkAppliance(String RoomID,String OutletID,String ApplianceID) throws InterruptedException {
 		Room r = House.getRoom(RoomID);
 		Outlet o =r.getOutlet(OutletID);
 		Appliance a = null;
@@ -51,7 +58,14 @@ public class Resident extends User {
 		a.pluginto(o);
 
 	}
+	public List<String> getHouseLabel(){
+		List<String> arr= new ArrayList<String>();
 
+		arr.add(House.getLabel());
+
+		return arr;
+
+	}
 	Resident(String name, String emiratesID, String phoneNumber, String emailAddress, String username, String password) {
 		super(name, emiratesID, phoneNumber, emailAddress, username, password);
 		ApplianceList = new ArrayList<Appliance>();
@@ -64,7 +78,13 @@ public class Resident extends User {
 		ApplianceList.add(new Appliance(name));
 		return true;
 	}
+	public double GenerateReport(String room, String outlet) {
+		Outlet o=House.getRoom(room).getOutlet(outlet);
+		double x= o.CurrentUsage();
+		// TODO Auto-generated method stub
+		return x;
 
+	}
 
 	public void setHouse(com.example.homedevices.House house) {
 		House = house;

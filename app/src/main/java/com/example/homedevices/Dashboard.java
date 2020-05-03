@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class Dashboard extends AppCompatActivity implements View.OnClickListener {
 
-    private Button add_builder,add_house,del_house,add_room,del_room,Logoff,add_outlet,del_outlet;
+    private Button add_builder,add_house,del_house,add_room,del_room,Logoff,add_outlet,del_outlet,view_report;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         User c= (User) getIntent().getSerializableExtra("User");
@@ -23,6 +23,7 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
         Logoff = findViewById(R.id.etLogOffButton);
         add_outlet = findViewById(R.id.addoutlet_button);
         del_outlet = findViewById(R.id.deloutlet_button);
+        view_report=findViewById(R.id.ViewReport);
         Logoff.setOnClickListener(this);
 
         if(c instanceof Admin){
@@ -36,7 +37,7 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
 
 
         }
-        else/*(c instanceof Builder)*/{
+        else if(c instanceof Builder){
             add_house.setOnClickListener(this);
             del_house.setOnClickListener(this);
             add_room.setOnClickListener(this);
@@ -45,8 +46,16 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
             del_outlet.setOnClickListener(this);
             add_builder.setVisibility(View.GONE);
         }
-        //else(c instanceof HouseOwner){
-        //}
+        else if (!( c instanceof HouseOwner) && (c instanceof Resident)) {
+            add_builder.setVisibility(View.GONE);
+            add_house.setVisibility(View.GONE);
+            del_house.setVisibility(View.GONE);
+            add_room.setVisibility(View.GONE);
+            del_room.setVisibility(View.GONE);
+            add_outlet.setVisibility(View.GONE);
+            del_outlet.setVisibility(View.GONE);
+            view_report.setOnClickListener(this);
+        }
 
 
 
@@ -97,7 +106,11 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
                 startActivity(intent);
                 break;
             }
-
+            case R.id.ViewReport:{
+                Intent intent = new Intent(this, viewReport.class).putExtra("User",c);
+                startActivity(intent);
+                break;
+            }
         }
     }
 }

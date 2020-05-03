@@ -55,7 +55,11 @@ public class linkAppliance extends AppCompatActivity implements View.OnClickList
 
         switch (v.getId()) {
             case R.id.link: {
-                r.linkAppliance(String.valueOf(RoomID.getSelectedItem()),String.valueOf(OutletID.getSelectedItem()),String.valueOf(ApplianceID.getSelectedItem()));
+                try {
+                    r.linkAppliance(String.valueOf(RoomID.getSelectedItem()),String.valueOf(OutletID.getSelectedItem()),String.valueOf(ApplianceID.getSelectedItem()));
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
 
                 Intent intent = new Intent(this, Dashboard.class).putExtra("User",r);
                 startActivity(intent);
