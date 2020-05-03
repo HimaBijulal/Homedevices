@@ -1,11 +1,11 @@
 package com.example.homedevices;
 
-import androidx.appcompat.app.AppCompatActivity;
+        import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
+        import android.content.Intent;
+        import android.os.Bundle;
+        import android.view.View;
+        import android.widget.Button;
 
 public class Dashboard extends AppCompatActivity implements View.OnClickListener {
 
@@ -45,6 +45,7 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
             add_outlet.setOnClickListener(this);
             del_outlet.setOnClickListener(this);
             add_builder.setVisibility(View.GONE);
+            view_report.setVisibility(View.GONE);
         }
         else if (!( c instanceof HouseOwner) && (c instanceof Resident)) {
             add_builder.setVisibility(View.GONE);
@@ -52,8 +53,8 @@ public class Dashboard extends AppCompatActivity implements View.OnClickListener
             del_house.setVisibility(View.GONE);
             add_room.setVisibility(View.GONE);
             del_room.setVisibility(View.GONE);
-            add_outlet.setVisibility(View.GONE);
-            del_outlet.setVisibility(View.GONE);
+            add_outlet.setOnClickListener(this);
+            del_outlet.setOnClickListener(this);
             view_report.setOnClickListener(this);
         }
 
