@@ -13,6 +13,14 @@ class Appliance extends Device {
 		return power;
 	}
 
+	public void setPower(double power) {
+		this.power = power;
+	}
+
+	public void setTimePlugged(double timePlugged) {
+		this.timePlugged = timePlugged;
+	}
+
 	private double power=5.0;
 	private double timePlugged=0.0;
 

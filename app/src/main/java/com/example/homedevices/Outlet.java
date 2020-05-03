@@ -32,6 +32,10 @@ public class Outlet implements Serializable {
 		return true;
 	}
 
+	public void setPower(double power) {
+		this.power = power;
+	}
+
 	public double CurrentUsage(/*Outlet o*/) {
 		double power = 0.0;
 		Appliance a = pluggedAppliance;

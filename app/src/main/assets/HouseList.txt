@@ -1,4 +1,4 @@
-AbdNuami	HouseOwner1	Resident1,Resident2,Resident3	17a	Avenue1	1	Nuami
+AbdNuami	s73000  aak231,Resident2,Resident3	17a	Avenue1	1	Khan
 Builder2	HouseOwner2	Resident4,Resident5,Resident6	18a	Avenue2	2	Mesmar
-Builder3	s73000	Resident7,Resident8,Resident9	19c	Avenue3	3	Bijulal
-Builder4	HouseOwner4	Resident10,aak231,Resident12	20a	Avenue4	4	Khan
+Builder3	HouseOwner3	Resident7,Resident8,Resident9	19c	Avenue3	3	Bijulal
+Builder4	HouseOwner4	Resident10,aak231,Resident12	20a	Avenue4	4	Nuami
