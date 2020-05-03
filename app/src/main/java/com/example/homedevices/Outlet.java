@@ -9,7 +9,7 @@ public class Outlet implements Serializable {
 	private String label;
 	private Appliance pluggedAppliance = null;
 	private double power=5.0;
-	private double timePlugged=0.0;
+	//private double timePlugged=0.0;
 	public Outlet(String label) {
 		this.label = label;
 	}

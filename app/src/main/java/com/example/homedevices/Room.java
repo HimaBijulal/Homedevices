@@ -81,4 +81,13 @@ public class Room  implements Serializable{
 
 
 	}
+
+    public List<String> getpluggedOutletLabels() {
+		List<String> arr= new ArrayList<String>();
+		for(int i=0;i<listofoutlets.size();i++){
+			if(listofoutlets.get(i).isPlugged())
+				arr.add(listofoutlets.get(i).getLabel());
+		}
+		return arr;
+    }
 }

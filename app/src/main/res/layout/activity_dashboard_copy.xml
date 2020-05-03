@@ -100,6 +100,22 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <Button
+        android:id="@+id/ViewReport"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="315dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bgbuttonaddbuilder"
+        android:text="View Report"
+        android:textColor="#FFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.427"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
         android:id="@+id/delroom_button"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="315dp"
@@ -123,6 +139,7 @@
         app:srcCompat="@drawable/banner" />
 
     <TextView
+        android:id="@+id/textView8"
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:fontFamily="sans-serif-black"
