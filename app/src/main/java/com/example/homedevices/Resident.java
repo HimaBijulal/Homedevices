@@ -43,6 +43,8 @@ public class Resident extends User {
 	public List<String> getPluggedOutletLabels(String Room){
 
 		Room r =House.getRoom(Room);
+		if(r ==null)
+			return new ArrayList<String>();
 		return r.getpluggedOutletLabels();
 
 
