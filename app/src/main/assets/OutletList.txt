@@ -1,1 +1,1 @@
-AbdNuami    Khan   Bathroom    OutletName1  aak231    Microwave    123
+AbdNuami    Khan    Bathroom    OutletName1 aak231  Microwave   123

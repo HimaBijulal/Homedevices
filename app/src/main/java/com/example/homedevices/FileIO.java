@@ -81,7 +81,7 @@ public class FileIO {
             String houseno;
             while((line=br.readLine()) != null)
             {
-                String barrier[]=line.split("\t");
+                String barrier[]=line.split("\\s+");
                 Busername= barrier[0];
                 Husername= barrier[1];
                 Rusername= barrier[2];
@@ -149,7 +149,7 @@ public class FileIO {
             double power;
             while((line=br.readLine()) != null)
             {
-                String barrier[]=line.split("\t");
+                String barrier[]=line.split("\\s+");
                 Rusername= barrier[0];
                 appliancelabel=barrier[1];
                 power=Double.parseDouble(barrier[2]);
@@ -158,8 +158,9 @@ public class FileIO {
 
                 for(User u: UserList)
                 {
-                    if(u.getUsername().equals(Rusername))
-                        ((Resident) u).setAppliance(appliancelabel,power,timeplugged);
+                    if(u.getUsername().equals(Rusername)){
+                        ((Resident) u).addAppliance(appliancelabel);
+                        ((Resident) u).setAppliance(appliancelabel,power,timeplugged);}
 
                 }
             }
@@ -180,7 +181,7 @@ public class FileIO {
             double power;
             while((line=br.readLine()) != null)
             {
-                String barrier[]=line.split("\t");
+                String barrier[]=line.split("\\s+");
                 Busername= barrier[0];
                 label=barrier[1];
                 roomlabel=barrier[2];
@@ -191,18 +192,18 @@ public class FileIO {
 
                 for(User u: UserList)
                 {
-                    if(u.getUsername().equals(Busername))
-                        ((Builder) u).AddOutlet(label,roomlabel,outletlabel);
-                        Outlet o = ((Builder) u).getOutlet(label,roomlabel,outletlabel);
-                        for (User i: UserList)
-                        {
-                            if(i.getUsername().equals(Rusername))
-                            {
+                    if(u.getUsername().equals(Busername)) {
+                        ((Builder) u).AddOutlet(label, roomlabel, outletlabel);
+                        Outlet o = ((Builder) u).getOutlet(label, roomlabel, outletlabel);
+                        for (User i : UserList) {
+                            if (i.getUsername().equals(Rusername)) {
                                 o.plugAppliance(((Resident) i).getAppliance(appliancelabel));
                                 ((Resident) i).getAppliance(appliancelabel).pluginto(o);
+                                o.setPower(power);
                             }
                         }
-                        o.setPower(power);
+
+                    }
 
                 }
             }

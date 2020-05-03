@@ -1,10 +1,11 @@
 package com.example.homedevices;
 
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Resident extends User {
+public class Resident extends User implements Serializable {
 
 	private House House;
 

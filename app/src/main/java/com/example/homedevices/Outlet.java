@@ -39,10 +39,11 @@ public class Outlet implements Serializable {
 	public double CurrentUsage(/*Outlet o*/) {
 		double power = 0.0;
 		Appliance a = pluggedAppliance;
-		if (this.isPlugged()) {
-			a.getLabel();
-			power = a.getPower() * a.getTimePlugged();
-		}
-		return power;
+		return a.getPower();
+		//if (this.isPlugged()) {
+		//	a.getLabel();
+		//	power = a.getPower() * a.getTimePlugged();
+		//}
+		//return power;
 	}
 }
