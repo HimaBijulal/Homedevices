@@ -17,11 +17,11 @@ import android.widget.Toast;
     private Spinner HouseID,RoomID,outletID;
     private Resident b;
     private viewReport d;
-    private Button generate;
+    private Button generate,cancel;
     private TextView power;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        //super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_view_report);
 
 
@@ -32,6 +32,7 @@ import android.widget.Toast;
         RoomID = (Spinner) findViewById(R.id.roomspinner);
         outletID = (Spinner)findViewById(R.id.outletspinner);
         generate= (Button) findViewById(R.id.Generate);
+        cancel =(Button)findViewById(R.id.cancelPower);
         //------------------------------------------------------------------------------
         ArrayAdapter<String> dataAdapter1 = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, b.getHouseLabel());
@@ -52,6 +53,7 @@ import android.widget.Toast;
         outletID.setOnItemSelectedListener(new viewReport.OutletIDListner());
 
         generate.setOnClickListener(this);
+        cancel.setOnClickListener(this);
         d=this;
     }
         @Override
@@ -67,7 +69,7 @@ import android.widget.Toast;
                     break;
                     // }
                 }
-                case R.id.CanceloutletR: {
+                case R.id.cancelPower: {
                     Intent intent = new Intent(this, Dashboard.class).putExtra("User",b);
                     startActivity(intent);
                 }
