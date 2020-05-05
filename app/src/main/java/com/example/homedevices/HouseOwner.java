@@ -7,7 +7,7 @@ import java.util.Set;
 
 public class HouseOwner extends Resident {
 
-	HouseOwner(String name, String emiratesID, String phoneNumber, String emailAddress, String username, String password) {
+	public HouseOwner(String name, String emiratesID, String phoneNumber, String emailAddress, String username, String password) {
 		super(name, emiratesID, phoneNumber, emailAddress, username, password);
 	}
 	public void addResidant(Resident r){

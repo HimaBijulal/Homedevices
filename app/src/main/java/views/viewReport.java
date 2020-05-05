@@ -1,4 +1,4 @@
-package com.example.homedevices;
+package views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,7 +12,10 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-    public class viewReport extends AppCompatActivity implements View.OnClickListener{
+import com.example.homedevices.R;
+import com.example.homedevices.Resident;
+
+public class viewReport extends AppCompatActivity implements View.OnClickListener{
 
     private Spinner HouseID,RoomID,outletID;
     private Resident b;

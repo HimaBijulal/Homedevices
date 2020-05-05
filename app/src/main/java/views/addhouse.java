@@ -1,4 +1,4 @@
-package com.example.homedevices;
+package views;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +9,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import com.example.homedevices.Builder;
+import com.example.homedevices.House;
+import com.example.homedevices.R;
 
 public class addhouse extends AppCompatActivity implements View.OnClickListener {
 
@@ -45,11 +49,11 @@ public class addhouse extends AppCompatActivity implements View.OnClickListener 
                 else if(!House.isValidHLabel(b,Label.getText().toString()))
                     System.out.println("HouseLabelError");
                 b.Addhouse(new House(StreetName.getText().toString(),District.getText().toString(),HouseNo.getText().toString(),Label.getText().toString()));
-                //Add builder object to list of builders
+
                 Intent intent = new Intent(this, Dashboard.class).putExtra("User",b);;
                 startActivity(intent);
                 break;
-                // }
+
             }
             case R.id.CancelRoomR: {
                 Intent intent = new Intent(this, Dashboard.class).putExtra("User",b);;

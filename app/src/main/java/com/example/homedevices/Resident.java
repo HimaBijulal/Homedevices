@@ -86,7 +86,7 @@ public class Resident extends User implements Serializable {
 		return arr;
 
 	}
-	Resident(String name, String emiratesID, String phoneNumber, String emailAddress, String username, String password) {
+	public Resident(String name, String emiratesID, String phoneNumber, String emailAddress, String username, String password) {
 		super(name, emiratesID, phoneNumber, emailAddress, username, password);
 		ApplianceList = new ArrayList<Appliance>();
 	}

@@ -1,4 +1,4 @@
-package com.example.homedevices;
+package views;
 
         import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,13 @@ package com.example.homedevices;
         import android.os.Bundle;
         import android.view.View;
         import android.widget.Button;
+
+        import com.example.homedevices.Admin;
+        import com.example.homedevices.Builder;
+        import com.example.homedevices.HouseOwner;
+        import com.example.homedevices.R;
+        import com.example.homedevices.Resident;
+        import com.example.homedevices.User;
 
 public class Dashboard extends AppCompatActivity implements View.OnClickListener {
 

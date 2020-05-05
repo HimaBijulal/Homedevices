@@ -1,4 +1,4 @@
-package com.example.homedevices;
+package views;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,9 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.homedevices.R;
+import com.example.homedevices.Resident;
 
 public class linkAppliance extends AppCompatActivity implements View.OnClickListener{
     private Spinner OutletID,RoomID,ApplianceID;

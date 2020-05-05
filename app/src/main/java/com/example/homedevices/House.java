@@ -26,7 +26,7 @@ public class House implements Serializable {
 	private boolean occupied=false;
 
 
-	House(String streetname, String district, String houseno, String label) {
+	public House(String streetname, String district, String houseno, String label) {
 		Streetname = streetname;
 		District = district;
 		Houseno = houseno;

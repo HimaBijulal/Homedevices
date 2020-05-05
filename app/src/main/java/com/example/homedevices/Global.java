@@ -20,4 +20,5 @@ public class Global{
         }
         return true;
     }
+    public static  boolean flag = true;
 }

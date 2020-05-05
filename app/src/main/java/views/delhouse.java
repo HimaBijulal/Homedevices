@@ -1,4 +1,4 @@
-package com.example.homedevices;
+package views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,6 +11,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.example.homedevices.Builder;
+import com.example.homedevices.R;
 
 public class delhouse extends AppCompatActivity implements View.OnClickListener {
 
@@ -32,7 +35,7 @@ public class delhouse extends AppCompatActivity implements View.OnClickListener 
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         HouseL.setAdapter(dataAdapter);
 
-        //Label=(EditText) findViewById(R.id.editText75)
+
         Delete = findViewById(R.id.delhouse_button);
         Cancel = findViewById(R.id.CancelRoomR);
         Delete.setOnClickListener(this);
@@ -45,11 +48,10 @@ public class delhouse extends AppCompatActivity implements View.OnClickListener 
         switch (v.getId()) {
             case R.id.delhouse_button: {
                 b.Removehouse(String.valueOf(HouseL.getSelectedItem()));
-                //Add builder object to list of builders
+
                 Intent intent = new Intent(this, Dashboard.class).putExtra("User",b);
                 startActivity(intent);
                 break;
-                // }
             }
             case R.id.CancelRoomR: {
                 Intent intent = new Intent(this, Dashboard.class).putExtra("User",b);

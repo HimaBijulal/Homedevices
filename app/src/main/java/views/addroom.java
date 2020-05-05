@@ -1,4 +1,6 @@
-package com.example.homedevices;
+package views;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,50 +12,54 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
+import com.example.homedevices.Builder;
+import com.example.homedevices.R;
 
-public class changeOwnership extends AppCompatActivity implements View.OnClickListener {
+public class addroom extends AppCompatActivity implements View.OnClickListener {
 
-    private Spinner ResidentL;
-    private Button Change,Cancel;
-    private HouseOwner b;
-
+    private EditText RoomL;
+    private Spinner HouseL;
+    private Button Add,Cancel;
+    private Builder b;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        b= (HouseOwner) getIntent().getSerializableExtra("User");
+        b= (Builder) getIntent().getSerializableExtra("User");
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_changeownership);
-        ResidentL = (Spinner) findViewById(R.id.spinner2);
+        setContentView(R.layout.activity_addroom);
+        RoomL = (EditText) findViewById(R.id.RoomLabel);
+        HouseL = (Spinner) findViewById(R.id.spinner0);
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item, b.getResidants());
+                android.R.layout.simple_spinner_item, b.getHouseLabels());
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        ResidentL.setAdapter(dataAdapter);
+        HouseL.setAdapter(dataAdapter);
 
-        Change = findViewById(R.id.change_button);
-        Cancel = findViewById(R.id.CancelChange);
-        Change.setOnClickListener(this);
+        Add = findViewById(R.id.AddHouseR);
+        Cancel = findViewById(R.id.CancelRoomR);
+        Add.setOnClickListener(this);
         Cancel.setOnClickListener(this);
-        ResidentL.setOnItemSelectedListener(new CustomOnItemSelectedListener());
+        HouseL.setOnItemSelectedListener(new CustomOnItemSelectedListener());
+
     }
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.change_button: {
-                b.changeownership(String.valueOf(ResidentL.getSelectedItem()));
 
-                Intent intent = new Intent(this, Login.class);
+        switch (v.getId()) {
+            case R.id.AddHouseR: {
+                b.Addroom(String.valueOf(HouseL.getSelectedItem()),RoomL.getText().toString());
+                //Add builder object to list of builders
+                Intent intent = new Intent(this, Dashboard.class).putExtra("User",b);
                 startActivity(intent);
                 break;
+                // }
             }
-            case R.id.CancelChange: {
+            case R.id.CancelRoomR: {
                 Intent intent = new Intent(this, Dashboard.class).putExtra("User",b);
                 startActivity(intent);
             }
         }
-    }
-
+}
     public class CustomOnItemSelectedListener implements AdapterView.OnItemSelectedListener {
 
         public void onItemSelected(AdapterView<?> parent, View view, int pos,long id) {
@@ -68,7 +74,4 @@ public class changeOwnership extends AppCompatActivity implements View.OnClickLi
         }
 
 
-    }
-}
-
-
+}}

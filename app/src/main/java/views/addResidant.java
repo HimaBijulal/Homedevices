@@ -1,4 +1,4 @@
-package com.example.homedevices;
+package views;
 
 import android.content.Intent;
 import android.os.Build;
@@ -9,6 +9,12 @@ import android.widget.EditText;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.homedevices.Builder;
+import com.example.homedevices.HouseOwner;
+import com.example.homedevices.R;
+import com.example.homedevices.Resident;
+import com.example.homedevices.User;
 
 import java.io.Serializable;
 
@@ -70,7 +76,7 @@ public class addResidant extends AppCompatActivity implements View.OnClickListen
                 Intent intent = new Intent(this, Dashboard.class).putExtra("User",c);;
                 startActivity(intent);
                 break;
-                // }
+
             }
             case R.id.cancelbutton: {
                 Intent intent = new Intent(this, Dashboard.class).putExtra("User",c);;

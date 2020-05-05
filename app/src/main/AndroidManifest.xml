@@ -9,22 +9,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".viewReport"></activity>
-        <activity android:name=".delroom" />
-        <activity android:name=".addroom" />
-        <activity android:name=".delhouse" />
-        <activity android:name=".addhouse" />
-        <activity android:name=".addbuilder" />
-        <activity android:name=".Dashboard" />
-        <activity android:name=".SuccessLogin" />
-        <activity android:name=".addoutlet" />
-        <activity android:name=".deloutlet" />
-        <activity android:name=".addResidant" />
-        <activity android:name=".addAppliance" />
-        <activity android:name=".addHouseOwner" />
-        <activity android:name=".changeOwnership" />
-        <activity android:name=".linkAppliance" />
-        <activity android:name=".Login">
+        <activity android:name="views.viewReport"></activity>
+        <activity android:name="views.delroom" />
+        <activity android:name="views.addroom" />
+        <activity android:name="views.delhouse" />
+        <activity android:name="views.addhouse" />
+        <activity android:name="views.addbuilder" />
+        <activity android:name="views.Dashboard" />
+        <activity android:name="views.addoutlet" />
+        <activity android:name="views.deloutlet" />
+        <activity android:name="views.addResidant" />
+        <activity android:name="views.addAppliance" />
+        <activity android:name="views.addHouseOwner" />
+        <activity android:name="views.changeOwnership" />
+        <activity android:name="views.linkAppliance" />
+        <activity android:name="views.Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

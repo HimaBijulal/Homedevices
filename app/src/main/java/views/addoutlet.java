@@ -1,4 +1,4 @@
-package com.example.homedevices;
+package views;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,9 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.homedevices.Builder;
+import com.example.homedevices.R;
 
 public class addoutlet extends AppCompatActivity implements View.OnClickListener {
     private EditText OutletLabel;
@@ -86,8 +89,8 @@ public class addoutlet extends AppCompatActivity implements View.OnClickListener
         }
 
         @Override
-        public void onNothingSelected(AdapterView<?> arg0) {
-            // TODO Auto-generated method stub
+        public void onNothingSelected(AdapterView<?> parent) {
+
         }
 
 
@@ -102,8 +105,8 @@ public class addoutlet extends AppCompatActivity implements View.OnClickListener
         }
 
         @Override
-        public void onNothingSelected(AdapterView<?> arg0) {
-            // TODO Auto-generated method stub
+        public void onNothingSelected(AdapterView<?> parent) {
+
         }
 
 

@@ -1,4 +1,4 @@
-package com.example.homedevices;
+package views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,9 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import com.example.homedevices.Builder;
+import com.example.homedevices.R;
 
 public class delroom extends AppCompatActivity implements View.OnClickListener{
     private Spinner HouseID,RoomID;

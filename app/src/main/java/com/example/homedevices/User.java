@@ -9,7 +9,7 @@ import androidx.annotation.RequiresApi;
 
 import java.io.Serializable;
 
-abstract class User implements Serializable {
+public abstract class User implements Serializable {
 	private String Name;
 	private String EmiratesID;
 	private String PhoneNumber;

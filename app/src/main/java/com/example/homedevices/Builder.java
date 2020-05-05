@@ -9,7 +9,7 @@ public class Builder extends User {
 	private ArrayList <House> Listofhouses;
 
 
-	Builder(String name, String emiratesID, String phoneNumber, String emailAddress, String username, String password) {
+	public Builder(String name, String emiratesID, String phoneNumber, String emailAddress, String username, String password) {
 		super(name, emiratesID, phoneNumber, emailAddress, username, password);
 		Listofhouses = new ArrayList<House>();
 	}
